@@ -1,2 +1,3 @@
-# KinR
-App para la enseñanza de la lengua totonaca
+# Kintachuwin App
+App para la enseñanza de la lengua totonaca.  
+Programada con React Native.  
