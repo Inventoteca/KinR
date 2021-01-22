@@ -241,9 +241,12 @@ https://www.instamobile.io/android-development/generate-react-native-release-bui
 
 ## Cambiar icono de app Android
 Cambiar las imagenes de las carpetas mipmap* que se encuentran en 
-**YourProject/android/app/src/main/res  
+`YourProject/android/app/src/main/res`  
 https://aboutreact.com/react-native-change-app-icon/
-El tutorial recomienda usar https://makeappicon.com, deben existir muchas alternativas a esa página.  
+
+https://easyappicon.com  
+https://appicon.co  
+https://makeappicon.com  
 
 Los tamaños de los iconos por default van de 48x48px a 192x192px.  
 
