@@ -127,18 +127,23 @@ Una forma fácil de crear un botón es usar un touchable con texto anidado.
 ## Ajustar altura de imágenes automáticamente
 Simple componente con ancho fijo
 ```
-const MyImg = (props) => {
-    const i = Image.resolveAssetSource(props.img);
+const Imgn = (props) => {
+    const i = Image.resolveAssetSource(props.source);
     const r = i.height / i.width; //ratio
-    const w = 320; //base width
+    const w = props.width; //base width
     const h = w * r; //adjusted height
     return(
         <View>
-            <Image source={props.img} style={{width:w, height:h}} />
+            <Image source={props.source} style={{width:w, height:h}} />
         </View>
     );
 }
 ```
+Usar como
+```
+<Imgn source={require('../assets/logo.png')} width={320} />
+```
+
 Documentación de Image  
 https://reactnative.dev/docs/image  
 
