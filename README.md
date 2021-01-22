@@ -100,6 +100,8 @@ https://stackoverflow.com/questions/53737196/how-to-play-sound-in-react-native
 ¿Qué forma es mejor para no reproducir varios sonidos al mismo tiempo?  
 No existe una variable estática isPlaying.  
 
+Poner archivos en `android/app/src/main/res/raw/`. Sin subdirectorios y nombres en minúsculas.
+
 La documentación de la librería tiene enlaces a otras librerías
 de audio y video que tienen actualizaciones más recientes  
 https://github.com/react-native-audio-toolkit/react-native-audio-toolkit  
