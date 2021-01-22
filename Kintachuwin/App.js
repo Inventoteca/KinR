@@ -1,13 +1,18 @@
 /**
- * Sample React Native App
+ * Kintachuwin App
+ * Editado desde Sample React Native App
  * https://github.com/facebook/react-native
- *
+ * 
  * @format
  * @flow strict-local
  */
 
-import 'react-native-gesture-handler';
-import React from 'react';
+// Importar todo los necesario ==========================================================
+//import 'react-native-gesture-handler'; //para terminar instalación de este modulo?
+import React from 'react'; //estrictamente necesario
+import { NavigationContainer } from '@react-navigation/native'; //navegación contenedor
+import { createStackNavigator } from '@react-navigation/stack'; //navegación stack
+//import Sound from 'react-native-sound'; //para reproducir sonidos
 import {
   SafeAreaView,
   StyleSheet,
@@ -15,98 +20,65 @@ import {
   View,
   Text,
   StatusBar,
+  Button,
   TouchableOpacity,
-} from 'react-native';
+} from 'react-native'; //varios elementos
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+// Youtube =================================================================================
+//import YoutubePlayer from 'react-native-youtube-iframe' //para insertar video de youtube
+//import YouTube, { YouTubeStandaloneIOS, YouTubeStandaloneAndroid } from 'react-native-youtube';
 
-import Sound from 'react-native-sound'; //para reproducir sonidos
-import YoutubePlayer from "react-native-youtube-iframe";
+// Pantallas - Screens ==================================================================================
+//import Externo from './_externo';
+import Portada from "./src/_00_portada";
+import Principal from "./src/_01_principal";
 
-function playLocalSound() {
-  //Sound.stop();
-  Sound.setCategory('Playback', false);
-  var mySound = new Sound('au_1_01.mp3', Sound.MAIN_BUNDLE, (error) => {
-    if (error) {
-      console.log('Error al cargar: ' + error);
-      return;
-    }
-    else {
-      mySound.play((success) => {
-        if (success) {
-          console.log('Sonado');
-        }
-        else {
-          console.log('Problema al tocar');
-        }
-      })
-    }
-  });
-  mySound.setVolume(0.9);
-  mySound.release();
-}
+import Gramatica from "./src/_10_gramatica";
+import Numeros from "./src/_20_numeros";
+import Vocabulario from "./src/_30_vocabulario";
+import Animales from "./src/_40_animales";
+import Plantas from "./src/_50_plantas";
+import Audiovisuales from "./src/_60_audiovisuales";
+import Cuentos from "./src/_70_cuentos";
+import Galeria from "./src/_80_galeria";
+import Conocenos from "./src/_90_conocenos";
 
+import Grafias from "./src/_11_grafias";
+import Pronombres from "./src/_12_pronombres";
+import Prefijos from "./src/_13_prefijos";
+
+const Stack = createStackNavigator();
+
+// App principal ====================================================================================
 const App: () => React$Node = () => {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-              
-              <TouchableOpacity style={{ backgroundColor: 'lightgrey', justifyContent: 'center' }} onPress={() => playLocalSound()}>
-                <Text style={{ textAlign: 'center', fontSize: 18, color: 'black', padding: 5, fontFamily: "Purisa" }}>Play sound from local file</Text>
-              </TouchableOpacity>
+    <NavigationContainer>
+      {/*<StatusBar barStyle="light-content" />*/}
+      <Stack.Navigator initialRouteName="Portada" /*headerMode="none"*/>
+        <Stack.Screen name="Portada" component={Portada} />
+        <Stack.Screen name="Principal" component={Principal} />
 
-              <YoutubePlayer height={250} videoId={"sNhhvQGsMEc"} />
+        <Stack.Screen name="Gramatica" component={Gramatica} />
+        <Stack.Screen name="Numeros" component={Numeros} />
+        <Stack.Screen name="Vocabulario" component={Vocabulario} />
+        <Stack.Screen name="Animales" component={Animales} />
+        <Stack.Screen name="Plantas" component={Plantas} />
+        <Stack.Screen name="Audiovisuales" component={Audiovisuales} />
+        <Stack.Screen name="Cuentos" component={Cuentos} />
+        <Stack.Screen name="Galeria" component={Galeria} />
+        <Stack.Screen name="Conocenos" component={Conocenos} />
 
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
+        <Stack.Screen name="Grafias" component={Grafias} />
+        <Stack.Screen name="Pronombres" component={Pronombres} />
+        <Stack.Screen name="Prefijos" component={Prefijos} />
+
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
+// Estilos ======================================================================================
+/*
 const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: Colors.lighter,
@@ -119,20 +91,20 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
   },
   sectionContainer: {
-    flex:1,
     marginTop: 32,
     paddingHorizontal: 24,
   },
   sectionTitle: {
+    fontFamily: "OpenSans-Regular",
     fontSize: 24,
     fontWeight: '600',
     color: Colors.black,
   },
   sectionDescription: {
+    fontFamily: "Purisa",
     marginTop: 8,
     fontSize: 18,
-    //fontWeight: '400',
-    fontFamily: 'Purisa',
+    fontWeight: '400',
     color: Colors.dark,
   },
   highlight: {
@@ -147,5 +119,7 @@ const styles = StyleSheet.create({
     textAlign: 'right',
   },
 });
+*/
 
+// export final -----------------------------------------------------------------------------
 export default App;
