@@ -189,7 +189,8 @@ Integrar videos de otras fuentes debe se más difícil.
 
 ## Navegar entre páginas
 El método más común para navegar entre páginas (o pantallas) es React Navigation.
-Se intala como un conjunto de extensiones.
+Se intala como un conjunto de extensiones.  
+https://reactnative.dev/docs/navigation  
 
 Las páginas se pueden construir como una función o como una clase, igual que la app principal.
 Si es una función, recibe como parámetro un objeto `{navigation}`.
