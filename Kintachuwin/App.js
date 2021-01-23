@@ -47,6 +47,8 @@ import Grafias from "./src/_11_grafias";
 import Pronombres from "./src/_12_pronombres";
 import Prefijos from "./src/_13_prefijos";
 
+import Contar from "./src/_21_contar";
+
 const Stack = createStackNavigator();
 
 // App principal ====================================================================================
@@ -71,6 +73,8 @@ const App: () => React$Node = () => {
         <Stack.Screen name="Grafias" component={Grafias} />
         <Stack.Screen name="Pronombres" component={Pronombres} />
         <Stack.Screen name="Prefijos" component={Prefijos} />
+
+        <Stack.Screen name="Contar" component={Contar} />
 
       </Stack.Navigator>
     </NavigationContainer>

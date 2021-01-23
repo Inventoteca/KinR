@@ -56,7 +56,7 @@ function Numeros({ navigation }) {
                 Podrás aprender la escritura y pronunciación en la variante central alto.
             </Text>
             
-            <Boton title="Escuchar" /*onPress={() => navigation.navigate('Gramatica')}*/ />
+            <Boton title="Contar" onPress={() => navigation.navigate('Contar')} />
         </View>
     );
 }
