@@ -293,3 +293,8 @@ Usar variables globales que hagan referencia al sonido que se está reproduciend
 Se implementará después.  
 https://stackoverflow.com/questions/49620303/react-native-sound-stop-all-sounds  
 
+Mostrar nombres de archivos en una columna `ls -1`  
+
+Eliminar tabs de texto  
+https://www.gillmeister-software.com/online-tools/text/trim_lines-remove_spaces.aspx  
+https://www.textcompare.org/text/remove-line-breaks-and-extra-spaces  
