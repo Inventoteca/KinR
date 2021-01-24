@@ -298,3 +298,11 @@ Mostrar nombres de archivos en una columna `ls -1`
 Eliminar tabs de texto  
 https://www.gillmeister-software.com/online-tools/text/trim_lines-remove_spaces.aspx  
 https://www.textcompare.org/text/remove-line-breaks-and-extra-spaces  
+
+Mejor forma de poner padding en FlatList  
+`contentContainerStyle={{ padding: 24 }}`  
+https://stackoverflow.com/questions/46196242/react-native-flatlist-last-item-visibility-issue  
+
+Escalar muchas imágenes usando imagemagick  
+https://askubuntu.com/questions/135477/how-can-i-scale-all-images-in-a-folder-to-the-same-width  
+https://linuxconfig.org/batch-image-resize-using-linux-command-line  
