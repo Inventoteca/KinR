@@ -111,8 +111,8 @@ function Prefijos({ navigation }) {
         <ScrollView>
             <View style={{
                 flex: 1,
-                alignItems: 'stretch',
-                justifyContent: 'flex-start',
+                //alignItems: 'stretch',
+                //justifyContent: 'flex-start',
                 backgroundColor: 'white',
                 padding: 24
             }}>

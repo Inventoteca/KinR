@@ -52,29 +52,43 @@ import Contar from "./src/_21_contar";
 const Stack = createStackNavigator();
 
 // App principal ====================================================================================
+// Usar prop options en Stack.Screen para poner el título con ortografía correcta en donde sea necesario
+// Usar prop screenOptions en Stack.Navigator para establecer estilo base de las Screens
+// fontSize: 20 por defecto en header de navigator
+// height: 56 por defecto en header de navigator 
+// options={{ headerShown: false }} para ocultar header en Portada
+// verde '#008037'
+// azul '#004AAD'
+//<StatusBar barStyle="light-content" backgroundColor='black' />
 const App: () => React$Node = () => {
   return (
     <NavigationContainer>
-      {/*<StatusBar barStyle="light-content" />*/}
-      <Stack.Navigator initialRouteName="Portada" /*headerMode="none"*/>
-        <Stack.Screen name="Portada" component={Portada} />
+      <StatusBar barStyle="light-content" backgroundColor='black' />
+
+      <Stack.Navigator initialRouteName="Portada" screenOptions={{
+        headerStyle: { backgroundColor: '#008037', height: 48 },
+        headerTintColor: 'white',
+        headerTitleStyle: { fontFamily: 'OpenSans-Regular', fontSize: 20 },
+      }} /*headerMode="none"*/>
+
+        <Stack.Screen name="Portada" component={Portada} options={{ headerShown: false }} />
         <Stack.Screen name="Principal" component={Principal} />
 
-        <Stack.Screen name="Gramatica" component={Gramatica} />
-        <Stack.Screen name="Numeros" component={Numeros} />
+        <Stack.Screen name="Gramatica" component={Gramatica} options={{ title: "Gramática" }} />
+        <Stack.Screen name="Numeros" component={Numeros} options={{ title: "Números" }} />
         <Stack.Screen name="Vocabulario" component={Vocabulario} />
         <Stack.Screen name="Animales" component={Animales} />
         <Stack.Screen name="Plantas" component={Plantas} />
         <Stack.Screen name="Audiovisuales" component={Audiovisuales} />
         <Stack.Screen name="Cuentos" component={Cuentos} />
-        <Stack.Screen name="Galeria" component={Galeria} />
-        <Stack.Screen name="Conocenos" component={Conocenos} />
+        <Stack.Screen name="Galeria" component={Galeria} options={{ title: "Galería" }} />
+        <Stack.Screen name="Conocenos" component={Conocenos} options={{ title: "Conócenos" }} />
 
-        <Stack.Screen name="Grafias" component={Grafias} />
-        <Stack.Screen name="Pronombres" component={Pronombres} />
-        <Stack.Screen name="Prefijos" component={Prefijos} />
+        <Stack.Screen name="Grafias" component={Grafias} options={{ title: "Grafías" }} />
+        <Stack.Screen name="Pronombres" component={Pronombres} voptions={{ title: "Pronombres posesivos" }} />
+        <Stack.Screen name="Prefijos" component={Prefijos} options={{ title: "Prefijos posesivos" }} />
 
-        <Stack.Screen name="Contar" component={Contar} />
+        <Stack.Screen name="Contar" component={Contar} options={{ title: "Números - Contar" }} />
 
       </Stack.Navigator>
     </NavigationContainer>

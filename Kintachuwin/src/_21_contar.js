@@ -101,7 +101,7 @@ function playLocalSound(file) {
 </Text>*/
 const Item = (props) => {
     return (
-        <View style={{ margin: 12 }}>
+        <View style={{ margin: 0 }}>
             <Text style={{ fontSize: 20, fontFamily: 'OpenSans-Bold' }}>
                 {props.titulo}
             </Text>
@@ -115,17 +115,53 @@ const Item = (props) => {
     );
 }
 
+const Header = () => {
+    return (
+        <View style={{
+            flex: 1,
+            //  alignItems: 'stretch',
+            //justifyContent: 'flex-start',
+            //backgroundColor: 'white',
+            //padding: 24
+        }}
+        >
+            {/*<Image source={require('../assets/logo.png')} 
+                style={{width:320, height:60}} resizeMode='contain'
+            />*/}
+            <Text style={{ fontSize: 20, fontFamily: 'OpenSans-Bold' }}>
+                NÚMEROS
+            </Text>
+            <Text style={{ fontSize: 16, fontFamily: 'OpenSans-Light' }}>
+                Por José Santiago y Juan M. Díaz
+            </Text>
+            <Text style={{ fontSize: 16, fontFamily: 'OpenSans-Regular', marginTop: 24, marginBottom: 24 }}>
+                Cuando se cuenta en el idioma tutunakú, los números siempre van acompañados por
+                un prefijo que está determinado la forma o aspecto del elemento que se está contando.
+                {"\n\n"}
+                Aquí te presentamos 24 prefijos que sirven para contar un sinfín de cosas.
+                Podrás aprender la escritura y pronunciación en la variante central alto.
+            </Text>
+        </View>
+    )
+}
+
 function Contar({ navigation }) {
     return (
         <View style={{
             flex: 1,
-            alignItems: 'stretch',
-            justifyContent: 'flex-start',
+            //alignItems: 'stretch',
+            //justifyContent: 'flex-start',
             backgroundColor: 'white',
-            padding: 0
+            //padding: 0,
         }}>
             <FlatList
-                style={{ padding: 24 }}
+                // Poner padding en style normal hace que el último elemento
+                // no sea completamente visible (se ve cortado).
+                // ¿Por qué contentContainerStyle si funciona?
+                // En la documentanción de FlatList no aparece esa prop,
+                // sin embargo aparece en la documentación de ScrollView.
+                //style={{ flex: 1, padding: 0, paddingBottom: 0, margin: 24 }}
+                contentContainerStyle={{ padding: 24 }}
                 data={DATA}
                 renderItem={({ item }) => <Item
                     titulo={item.titulo}
@@ -133,10 +169,14 @@ function Contar({ navigation }) {
                     foto={item.foto}
                     tabla={item.tabla}
                     audio={item.audio}
-                />
-                } />
+                />}
+                ListHeaderComponent={Header}
+            />
+
         </View>
     );
 }
 
 export default Contar;
+
+//<View style={{height:24}}></View>

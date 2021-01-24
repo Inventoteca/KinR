@@ -2,10 +2,10 @@ import React from 'react'; //estrictamente necesario
 import {
   View,
   Text,
-  Button,
-  Image,
-  TouchableHighlight,
-  TouchableNativeFeedback,
+  //Button,
+  //Image,
+  //TouchableHighlight,
+  //TouchableNativeFeedback,
   TouchableOpacity,
 } from 'react-native'; //varios elementos
 
