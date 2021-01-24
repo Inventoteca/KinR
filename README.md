@@ -304,6 +304,7 @@ Mejor forma de poner padding en FlatList
 https://stackoverflow.com/questions/46196242/react-native-flatlist-last-item-visibility-issue  
 
 Escalar muchas imágenes usando imagemagick  
+`convert "images/*.jpg[250x]" -set filename:base "%[basename]" "images/new_folder/%[filename:base].jpg"`  
 https://askubuntu.com/questions/135477/how-can-i-scale-all-images-in-a-folder-to-the-same-width  
 https://linuxconfig.org/batch-image-resize-using-linux-command-line  
 
