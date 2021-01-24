@@ -306,3 +306,10 @@ https://stackoverflow.com/questions/46196242/react-native-flatlist-last-item-vis
 Escalar muchas imágenes usando imagemagick  
 https://askubuntu.com/questions/135477/how-can-i-scale-all-images-in-a-folder-to-the-same-width  
 https://linuxconfig.org/batch-image-resize-using-linux-command-line  
+
+Cabmiar nombre de archivos a minúsculas  
+`for i in $( ls | grep [A-Z] ); do mv -i $i `echo $i | tr 'A-Z' 'a-z'`; done`  
+alternativa  
+`for f in *; do mv "$f" "$f.tmp"; mv "$f.tmp" "`echo $f | tr "[:upper:]" "[:lower:]"`"; done`  
+https://linuxconfig.org/rename-all-files-from-uppercase-to-lowercase-characters  
+https://stackoverflow.com/questions/7787029/how-do-i-rename-all-files-to-lowercase  
