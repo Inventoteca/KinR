@@ -59,6 +59,10 @@ import Mamiferos from "./src/_43_mamiferos";
 import Otros from "./src/_44_otros";
 import Reptiles from "./src/_45_reptiles";
 
+import Frutos from "./src/_51_frutos";
+import Herbaceas from "./src/_52_herbaceas";
+import Arboles from "./src/_53_arboles";
+
 const Stack = createStackNavigator();
 
 // App principal ====================================================================================
@@ -109,6 +113,10 @@ const App: () => React$Node = () => {
         <Stack.Screen name="Mamiferos" component={Mamiferos} options={{ title: "Mamíferos" }} />
         <Stack.Screen name="Otros" component={Otros} options={{ title: "Otros animales" }} />
         <Stack.Screen name="Reptiles" component={Reptiles} />
+
+        <Stack.Screen name="Frutos" component={Frutos} />
+        <Stack.Screen name="Herbaceas" component={Herbaceas} options={{ title: "Herbáceas" }} />
+        <Stack.Screen name="Arboles" component={Arboles} options={{ title: "Árboles" }} />
 
       </Stack.Navigator>
     </NavigationContainer>

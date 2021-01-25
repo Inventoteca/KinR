@@ -2,10 +2,10 @@ import React from 'react'; //estrictamente necesario
 import {
   View,
   Text,
-  Button,
-  Image,
-  TouchableHighlight,
-  TouchableNativeFeedback,
+  //Button,
+  //Image,
+  //TouchableHighlight,
+  //TouchableNativeFeedback,
   TouchableOpacity,
   ScrollView
 } from 'react-native'; //varios elementos
@@ -64,9 +64,9 @@ function Plantas({ navigation }) {
                 Te recomendamos observar a detalle la siguiente iconografía:
             </Text>
             
-            <Boton title="Frutos, semillas o raíces" /*onPress={() => navigation.navigate('Gramatica')}*/ />
-            <Boton title="Herbáceas " />
-            <Boton title="Árboles" />
+            <Boton title="Frutos, semillas o raíces" onPress={() => navigation.navigate('Frutos')} />
+            <Boton title="Herbáceas" onPress={() => navigation.navigate('Herbaceas')} />
+            <Boton title="Árboles" onPress={() => navigation.navigate('Arboles')} />
         </View>
         </ScrollView>
     );
