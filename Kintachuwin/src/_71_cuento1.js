@@ -13,14 +13,14 @@ const Imgn = (props) => {
     const w = props.width; //base width
     const h = w * r; //adjusted height
     return (
-        <View style={{ alignItems: 'flex-start' }} >
+        <View style={{ alignItems: 'center' }} >
             <Image source={props.source} style={{ width: w, height: h }} />
         </View>
     );
 }
 
 //<Boton title="X" /*onPress={() => navigation.navigate('Gramatica')}*/ />
-function Cuentos({ navigation }) {
+function Cuento1({ navigation }) {
     return (
         <ScrollView>
         <View style={{
@@ -34,7 +34,6 @@ function Cuentos({ navigation }) {
 
             <Text style={{fontSize:20, fontFamily:'OpenSans-Bold'}}>
                 <Text style={{fontStyle:'italic', fontWeight:'normal'}}>CHICHINI’ CHU MPAPA’ </Text>
-                (EL SOL Y EL LUNA)
             </Text>
 
             <Text style={{fontSize:16, fontFamily:'OpenSans-Light'}}>
@@ -49,9 +48,21 @@ Chi yuma rey malakgpakglhinalh manchiwix, akxni´ talakgpakglh takgska akgtumnch
 Alhi nkilhtamakú, makgsanikga lhkuyat ntu xmaklakaskilh nti na an li chichini´. Chi yuma nkkgawas nti xkgalhtawakganit likga xpáxuwama luwa xlakgpuwaninita´ na an li chichini´ alh ntasani chatunu chatunu nti xlakgapaskgoy kumu kgatsita´ nti xtalaliyankgoy akxi anit chiyuma nkgawas xtalakgatsuku chiwiw man xnana nkitasanilh lakgapala, palakga analh lhkgan alh maklhkuyat tachaxlh nkgatalhman wa staku tsukukgolh li talakgoy lkuyat kgampichi likgwa´ xmaskgolh snun lalh mankgawas tsukgulh staja xkgalhni chima xkgalhni tu tamach nkatiyatni lakgtsupin wa, pin wankgolh xa lakgchichokg tu lay kTuxtla chi mankgawas xtamalakgatsuk chiwix tsukulh tapa´ chichini´wa, akxni chilh mankgawasa nti xkgalhtawakganit sitsilh nitlan tlawalh na lhkgan alhi ntani xwi lkuyat na tachaxlh nkatalhman tapalalh cha kumu kiya ka xa lkgakga xwi ka papa´ wa xlanchu.`}
             </Text>
 
+            <Text style={{fontSize:20, fontFamily:'OpenSans-Bold'}}>
+                EL SOL Y LA LUNA
+            </Text>
+            
+            <Text style={{fontSize:16, fontFamily:'OpenSans-Regular', marginTop:24, marginBottom:24}}>
+{`Hace mucho tiempo cuando aún no había Sol ni Luna en la Tierra, hubo una lagartija que le gustaba calentarse en una piedra que se encontraba en los cultivos de tabaco.  El dueño de estos cultivos se dio cuenta que la lagartija se comía sus plantas e intentó quitar la piedra y al momento de tocarla se dio cuenta que estaba tibia; además, no pudo moverla ya que esta estaba muy pesada, luego llamó a hombres fuertes para que lo ayudaran, pero no lo lograron. Un día llegó un pájaro llamado “tantsulut” convertido en un niño y rodó la piedra con gran facilidad diciendo “skululu chiwix, skululu chiwix”, hasta llevarla al castillo del rey.
+
+El Rey mandó a romper la piedra y encontraron dentro de ella otra piedra muy peculiar; muy brillosa y hermosa. Las hijas del rey quisieron tenerla al ver lo preciosa que era; y empezó una fuerte disputa entre ellas. La hija menor decidió esconderla y al no hallar un lugar seguro, se la tragó. Tiempo después, la piedra empezó a crecer en su vientre hasta que “dio a luz” a un bebé varón. El bebé creció, y siendo un niño empezó a espiar a un joven de otra familia que estaba siendo preparado para convertirse en el Sol. El “niño piedra” aprendió todas las enseñanzas que le daban al joven.
+
+Tiempo después, se encendieron las llamas necesarias para convertir al joven en el Sol. El joven que se había preparado para ser el Sol estaba muy emocionado y fue a llamar a cada integrante de su familia y conocidos para que se reunieran y lo vieran convertirse en el Sol, sin embargo, el “niño piedra” solo llamó a su abuelita y se apresuró a lanzarse sobre las llamas. Al hacerlo se elevó al cielo, mientras las estrellas le lanzaban fuego para que brillara. En ese momento el “niño piedra” fue herido y derramó sangre en la tierra. Sus gotas de sangre se convirtieron en chiltepín, y en otras variedades de chiles rojos que hoy en día crecen en Tuxtla. Después, el “niño piedra” comenzó a convertirse en el Sol. Cuando llegó el joven que estaba siendo preparado para ser el Sol, se enojó al ver el Sol formado y en su desesperación, se lanzó a donde estaban las llamas pero ya solo quedaban las cenizas. Al instante, este joven también se elevó al cielo y se convirtió en Luna.`}
+            </Text>
+
         </View>
         </ScrollView>
     );
 }
 
-export default Cuentos;
+export default Cuento1;

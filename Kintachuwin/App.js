@@ -63,6 +63,14 @@ import Frutos from "./src/_51_frutos";
 import Herbaceas from "./src/_52_herbaceas";
 import Arboles from "./src/_53_arboles";
 
+import Video from "./src/_61_video";
+
+import Cuento1 from "./src/_71_cuento1";
+import Cuento2 from "./src/_72_cuento2";
+import Cuento3 from "./src/_73_cuento3";
+import Cuento4 from "./src/_74_cuento4";
+import Cuento5 from "./src/_75_cuento5";
+
 const Stack = createStackNavigator();
 
 // App principal ====================================================================================
@@ -117,6 +125,14 @@ const App: () => React$Node = () => {
         <Stack.Screen name="Frutos" component={Frutos} />
         <Stack.Screen name="Herbaceas" component={Herbaceas} options={{ title: "Herbáceas" }} />
         <Stack.Screen name="Arboles" component={Arboles} options={{ title: "Árboles" }} />
+
+        <Stack.Screen name="Video" component={Video} />
+
+        <Stack.Screen name="Cuento1" component={Cuento1} />
+        <Stack.Screen name="Cuento2" component={Cuento2} />
+        <Stack.Screen name="Cuento3" component={Cuento3} />
+        <Stack.Screen name="Cuento4" component={Cuento4} />
+        <Stack.Screen name="Cuento5" component={Cuento5} />
 
       </Stack.Navigator>
     </NavigationContainer>

@@ -57,7 +57,7 @@ const BotonImg = (props) => {
             }}
             onPress={props.onPress}
         >
-            <Imgn source={props.source} width={200} />
+            <Imgn source={props.source} width={64} />
         </TouchableOpacity>
     )
 }
@@ -74,6 +74,10 @@ function Cuentos({ navigation }) {
             }}>
 
                 <BotonImg source={require('../assets/_70/cn1.jpg')} onPress={() => navigation.navigate('Cuento1')} />
+                <BotonImg source={require('../assets/_70/cn2.jpg')} onPress={() => navigation.navigate('Cuento2')} />
+                <BotonImg source={require('../assets/_70/cn3.jpg')} onPress={() => navigation.navigate('Cuento3')} />
+                <BotonImg source={require('../assets/_70/cn4.jpg')} onPress={() => navigation.navigate('Cuento4')} />
+                <BotonImg source={require('../assets/_70/cn5.jpg')} onPress={() => navigation.navigate('Cuento5')} />
 
             </View>
         </ScrollView>
