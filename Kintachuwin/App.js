@@ -49,6 +49,16 @@ import Prefijos from "./src/_13_prefijos";
 
 import Contar from "./src/_21_contar";
 
+import Colores from "./src/_31_colores";
+import Cuerpo from "./src/_32_cuerpo";
+import Cocina from "./src/_33_cocina";
+
+import Anfibios from "./src/_41_anfibios";
+import Aves from "./src/_42_aves";
+import Mamiferos from "./src/_43_mamiferos";
+import Otros from "./src/_44_otros";
+import Reptiles from "./src/_45_reptiles";
+
 const Stack = createStackNavigator();
 
 // App principal ====================================================================================
@@ -85,10 +95,20 @@ const App: () => React$Node = () => {
         <Stack.Screen name="Conocenos" component={Conocenos} options={{ title: "Conócenos" }} />
 
         <Stack.Screen name="Grafias" component={Grafias} options={{ title: "Grafías" }} />
-        <Stack.Screen name="Pronombres" component={Pronombres} voptions={{ title: "Pronombres posesivos" }} />
+        <Stack.Screen name="Pronombres" component={Pronombres} options={{ title: "Pronombres posesivos" }} />
         <Stack.Screen name="Prefijos" component={Prefijos} options={{ title: "Prefijos posesivos" }} />
 
         <Stack.Screen name="Contar" component={Contar} options={{ title: "Números - Contar" }} />
+
+        <Stack.Screen name="Colores" component={Colores} options={{ title: "Colores" }} />
+        <Stack.Screen name="Cuerpo" component={Cuerpo} options={{ title: "Partes del cuerpo" }} />
+        <Stack.Screen name="Cocina" component={Cocina} options={{ title: "Utensilios de cocina" }} />
+
+        <Stack.Screen name="Anfibios" component={Anfibios} />
+        <Stack.Screen name="Aves" component={Aves} />
+        <Stack.Screen name="Mamiferos" component={Mamiferos} options={{ title: "Mamíferos" }} />
+        <Stack.Screen name="Otros" component={Otros} options={{ title: "Otros animales" }} />
+        <Stack.Screen name="Reptiles" component={Reptiles} />
 
       </Stack.Navigator>
     </NavigationContainer>

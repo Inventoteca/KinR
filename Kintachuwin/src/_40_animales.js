@@ -65,11 +65,11 @@ function Animales({ navigation }) {
                 observar a detalle la siguiente iconografía:
             </Text>
             
-            <Boton title="Anfibios" /*onPress={() => navigation.navigate('Gramatica')}*/ />
-            <Boton title="Aves" />
-            <Boton title="Mamíferos" />
-            <Boton title="Reptiles" />
-            <Boton title="Otros" />
+            <Boton title="Anfibios" onPress={() => navigation.navigate('Anfibios')} />
+            <Boton title="Aves" onPress={() => navigation.navigate('Aves')} />
+            <Boton title="Mamíferos" onPress={() => navigation.navigate('Mamiferos')} />
+            <Boton title="Reptiles" onPress={() => navigation.navigate('Reptiles')} />
+            <Boton title="Otros" onPress={() => navigation.navigate('Otros')} />
         </View>
         </ScrollView>
     );

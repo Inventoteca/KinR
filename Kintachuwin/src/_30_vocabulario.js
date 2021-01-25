@@ -54,9 +54,9 @@ function Vocabulario({ navigation }) {
                 su pronunciación en la variante central del Sur.
             </Text>
             
-            <Boton title="Colores" /*onPress={() => navigation.navigate('Gramatica')}*/ />
-            <Boton title="Partes del cuerpo" />
-            <Boton title="Utensilios de cocina" />
+            <Boton title="Colores" onPress={() => navigation.navigate('Colores')} />
+            <Boton title="Partes del cuerpo" onPress={() => navigation.navigate('Cuerpo')} />
+            <Boton title="Utensilios de cocina" onPress={() => navigation.navigate('Cocina')} />
         </View>
     );
 }
