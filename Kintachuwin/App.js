@@ -71,6 +71,9 @@ import Cuento3 from "./src/_73_cuento3";
 import Cuento4 from "./src/_74_cuento4";
 import Cuento5 from "./src/_75_cuento5";
 
+import Xanay from "./src/_91_xanay";
+import Colab from "./src/_92_colaboradores";
+
 const Stack = createStackNavigator();
 
 // App principal ====================================================================================
@@ -126,13 +129,16 @@ const App: () => React$Node = () => {
         <Stack.Screen name="Herbaceas" component={Herbaceas} options={{ title: "Herbáceas" }} />
         <Stack.Screen name="Arboles" component={Arboles} options={{ title: "Árboles" }} />
 
-        <Stack.Screen name="Video" component={Video} />
+        <Stack.Screen name="Video" component={Video} options={{ headerShown: false }} />
 
         <Stack.Screen name="Cuento1" component={Cuento1} />
         <Stack.Screen name="Cuento2" component={Cuento2} />
         <Stack.Screen name="Cuento3" component={Cuento3} />
         <Stack.Screen name="Cuento4" component={Cuento4} />
         <Stack.Screen name="Cuento5" component={Cuento5} />
+
+        <Stack.Screen name="Xanay" component={Xanay} options={{ title: "Colectivo Xanay" }} />
+        <Stack.Screen name="Colab" component={Colab} options={{ title: "Colaboradores" }} />
 
       </Stack.Navigator>
     </NavigationContainer>

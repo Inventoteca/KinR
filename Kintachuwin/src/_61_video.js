@@ -8,8 +8,10 @@ import {
     //TouchableHighlight,
     //TouchableNativeFeedback,
     TouchableOpacity,
-    ScrollView
+    ScrollView,
+    SafeAreaView,
 } from 'react-native'; //varios elementos
+import YoutubePlayer from 'react-native-youtube-iframe';
 
 const Imgn = (props) => {
     const i = Image.resolveAssetSource(props.source);
@@ -43,22 +45,28 @@ const Boton = (props) => {
         </TouchableOpacity>
     )
 }
-
 //<Boton title="X" onPress={() => navigation.navigate('Gramatica')} />
+
 function Video({ navigation }) {
     return (
-        <ScrollView>
-            <View style={{
-                flex: 1,
-                alignItems: 'stretch',
-                justifyContent: 'flex-start',
-                backgroundColor: 'white',
-                padding: 24
-            }}>
-                <Text>Video</Text>
-            </View>
-        </ScrollView>
+        <SafeAreaView style={{ flex: 1, justifyContent:'center', backgroundColor:'black' }}>
+            <YoutubePlayer height={360} videoId={"sNhhvQGsMEc"} />
+        </SafeAreaView>
     );
 }
+
+/*
+<ScrollView>
+    <View style={{
+        flex: 1,
+        alignItems: 'stretch',
+        justifyContent: 'flex-start',
+        backgroundColor: 'white',
+        padding: 24
+    }}>
+        <Text>Video</Text>
+    </View>
+</ScrollView>
+*/
 
 export default Video;
