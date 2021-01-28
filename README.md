@@ -186,7 +186,10 @@ https://www.embedplus.com/how-to-disable-the-watch-later-and-share-buttons-on-yo
 
 Una solución fácil para no poder compartir, es bloquear la parte superior de la zona del video
 con un elemento touchable transparente.  
-https://github.com/LonelyCpp/react-native-youtube-iframe/issues/11
+https://github.com/LonelyCpp/react-native-youtube-iframe/issues/11  
+
+Simular pantalla completa cuando inicia el video  
+https://github.com/LonelyCpp/react-native-youtube-iframe/issues/62  
 
 ## Reproducir streams de video de otras fuentes
 La segunda opción es Vimeo. Solo hay una librería  
