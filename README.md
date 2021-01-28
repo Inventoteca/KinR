@@ -105,7 +105,7 @@ Genera una instancia global del reproductor, por lo que solo se
 reproduce un sonido a la vez, así evitamos crear un componente propio.  
 
 El sonido se sigue reproduciendo en segundo plano. Para detenerlo se usa `AppState`.
-Cuando el estado cambia (entre `'background'` y `'active'`) se llama el método `stop`.
+Cuando el estado cambia (entre `'background'` y `'active'`) se llama el método `stop`.  
 https://reactnative.dev/docs/appstate  
 https://stackoverflow.com/questions/46662004/how-to-know-if-a-react-native-app-goes-to-background  
 
@@ -114,7 +114,7 @@ el evento (prop) `onStateChange` de `<NavigationContainer>`.
 Cuando la página cambia se llama el método `stop`.  
 https://stackoverflow.com/questions/64432944/how-to-implement-callback-function-when-screen-change-in-react-native  
 https://reactnavigation.org/docs/navigation-container  
-Otra opción más complicada sería escucar eventos en cada página o pantalla  
+Otra opción más complicada sería escuchar eventos en cada página o pantalla  
 https://reactnavigation.org/docs/navigation-events/  
 
 ## Repasar margin y padding
@@ -188,16 +188,18 @@ Una solución fácil para no poder compartir, es bloquear la parte superior de l
 con un elemento touchable transparente.  
 https://github.com/LonelyCpp/react-native-youtube-iframe/issues/11
 
-## Reproducir videos de Vimeo
+## Reproducir streams de video de otras fuentes
 La segunda opción es Vimeo. Solo hay una librería  
 https://github.com/Myagi/react-native-vimeo  
-Utiliza una página de Github para comunicarse con la API de Vimeo. No se ha probado.  
+Utiliza una página de Github para comunicarse con la API de Vimeo. No necesitamos usar la API. No se ha probado.  
 
 Parece complicado  
 https://www.reddit.com/r/reactnative/comments/bfuwcx/react_native_vimeo_android/  
 https://stackoverflow.com/questions/53220524/how-to-play-vimeo-videos-in-react-native  
 
-Integrar videos de otras fuentes debe se más difícil.  
+Usando `webview` es muy fácil insertar videos de diferentes fuentes.  
+
+Los videos se pueden subir a BitChute o a Internet Archive.  
 
 ## Navegar entre páginas
 El método más común para navegar entre páginas (o pantallas) es React Navigation.
