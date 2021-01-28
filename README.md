@@ -16,7 +16,6 @@ $ nvm list
     10.23.0
 ```
 
-
 Se ha seguido la documentación de React-Native  
 https://reactnative.dev/docs/getting-started  
 Tema alcanzado  
@@ -27,10 +26,7 @@ Tema al que se quiere llegar
 https://reactnative.dev/docs/signed-apk-android  
 
 Ejemplos de apps hechas con React-Native  
-https://github.com/ReactNativeNews/React-Native-Apps  
-
-una ejemplo elegido al azar (interesante y complicado)  
-https://github.com/GetStream/stream-chat-react-native  
+https://github.com/ReactNativeNews/React-Native-Apps   
 
 Proyecto creado con react-native init  
 ```
@@ -59,8 +55,8 @@ $ adb devices
 List of devices attached
 LMX430UCW8AIMFLJ5T      device
 ```
-Se usarán dos terminales, en las dos entrar al directorio de la app.  
-En la primera terminal ejecutar Metro  
+Se usan dos terminales en el directorio de la app.  
+En la primera terminal ejecutar Metro (opcional)  
 ```
 npx react-native start
 ```  
@@ -71,18 +67,15 @@ npx react-native run-android
 Editar App.js, los cambios se reflejan en pocos segundos.  
 
 Temas por estudiar
-- Texto y fuentes
-- Reproducir sonido
-- Reproducir video de Youtube o Vimeo
-- Navegar entre páginas
-- Generar apk
-- Subir a Google Play
-- Automatizar creación de listas
-las listas estás formadas por elementos parecidos pero cambian su contenido
-las listas se pueden llenar indicando los nombres de los recursos que debe
-tener cada componente
-- Cambiar nombre de la app
-- Cambiar icono de la app
+- [x] Texto y fuentes
+- [x] Reproducir sonido
+- [x] Reproducir stream de video (ej. Youtube o Vimeo)
+- [x] Navegar entre páginas
+- [x] Generar apk
+- [x] Automatizar creación de listas
+- [x] Cambiar nombre de la app
+- [x] Cambiar icono de la app
+- [ ] Subir a Google Play
 
 ## Usar fuentes personalizadas
 Revisar la siguiente guía  
@@ -93,22 +86,36 @@ Estas son las fuentes que están pre-instaladas
 https://github.com/react-native-training/react-native-fonts  
 
 ## Reproducir sonido
-Esta es la librería más popular  
+Poner archivos en `android/app/src/main/res/raw/`. Sin subdirectorios y nombres en minúsculas.  
+
+Esta es la librería más popular, pero en las pruebas deja escucharse después de reproducir varios archivos  
 https://www.npmjs.com/package/react-native-sound  
 https://alexb72.medium.com/how-to-add-sound-to-react-native-8ef152ba1a6  
 https://stackoverflow.com/questions/53737196/how-to-play-sound-in-react-native  
-¿Qué forma es mejor para no reproducir varios sonidos al mismo tiempo?  
-No existe una variable estática isPlaying.  
-
-Poner archivos en `android/app/src/main/res/raw/`. Sin subdirectorios y nombres en minúsculas.
 
 La documentación de la librería tiene enlaces a otras librerías
-de audio y video que tienen actualizaciones más recientes  
+de audio y video que tienen actualizaciones más recientes.
+react-native-audio-toolkit parece buena opción, pero la instalación es complicada.  
 https://github.com/react-native-audio-toolkit/react-native-audio-toolkit  
 https://github.com/react-native-video/react-native-video  
 
-Otra librería (no probada)  
+Esta será la extensión elegida.  
 https://developer.aliyun.com/mirror/npm/package/react-native-sound-player  
+Genera una instancia global del reproductor, por lo que solo se 
+reproduce un sonido a la vez, así evitamos crear un componente propio.  
+
+El sonido se sigue reproduciendo en segundo plano. Para detenerlo se usa `AppState`.
+Cuando el estado cambia (entre `'background'` y `'active'`) se llama el método `stop`.
+https://reactnative.dev/docs/appstate  
+https://stackoverflow.com/questions/46662004/how-to-know-if-a-react-native-app-goes-to-background  
+
+Para detener el sonido cuando cambia la página o pantalla en navigation se usa
+el evento (prop) `onStateChange` de `<NavigationContainer>`.
+Cuando la página cambia se llama el método `stop`.  
+https://stackoverflow.com/questions/64432944/how-to-implement-callback-function-when-screen-change-in-react-native  
+https://reactnavigation.org/docs/navigation-container  
+Otra opción más complicada sería escucar eventos en cada página o pantalla  
+https://reactnavigation.org/docs/navigation-events/  
 
 ## Repasar margin y padding
 https://blog.hubspot.com/website/css-margin-vs-padding  
@@ -322,3 +329,11 @@ https://stackoverflow.com/questions/7787029/how-do-i-rename-all-files-to-lowerca
 Cuadrícula dentro de FlatList  
 Se puede aplicar después para las listas grandes  
 https://dev.to/christiankohler/lessons-learned-from-building-a-grid-list-in-react-native-ckn  
+
+API de React.js  
+https://reactjs.org/docs/react-component.html  
+https://reactjs.org/docs/hooks-effect.html  
+https://reactjs.org/docs/hooks-reference.html  
+
+Ejemplos de export  
+https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export  
