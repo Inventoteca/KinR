@@ -10,6 +10,8 @@ target 'Kintachuwin' do
 
   pod 'RNSound', :path => '../node_modules/react-native-sound'
 
+  pod 'RNSoundPlayer', :path => '../node_modules/react-native-sound-player'
+
   target 'KintachuwinTests' do
     inherit! :complete
     # Pods for testing

@@ -9,15 +9,14 @@ import {
     TouchableOpacity,
     FlatList,
 } from 'react-native'; //varios elementos
-//import { FlatList } from 'react-native-gesture-handler';
-import Sound from 'react-native-sound';
+import {playLocalSound} from './mis-componentes';
 
 const DATA = [
     {
         key:'00',
         titulo: "PRONOMBRES POSESIVOS",
         texto: "Los pronombres posesivos ayudan a indicar la posesión de algún elemento o cosa.",
-        imagen: require('../assets/_12/img1.png'),
+        imagen: require('../assets/_12/img2.png'),
         audio: 'au_1_02.mp3',
     }
 ];
@@ -54,30 +53,6 @@ const Boton = (props) => {
         </TouchableOpacity>
     )
 }
-
-// Sonido ===========================================================================
-Sound.setCategory('Playback', false);
-function playLocalSound (file) {
-    var mySound = new Sound(file, Sound.MAIN_BUNDLE, (error)=>{
-      if(error) {
-        console.log('Error al cargar: '+error);
-        return;
-      }
-      else {
-        mySound.play((success)=>{
-          if(success){
-            console.log('Reproducción exitosa');
-          }
-          else {
-            console.log('Problema al reproducir');
-          }
-        })
-      }
-    });
-    //mySound.setVolume(0.9);
-    //Sound.stop();
-    mySound.release();
-  }
 
 /*<Text style={{fontSize:16, fontFamily:'OpenSans-Light'}}>
     {props-autor}

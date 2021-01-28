@@ -9,15 +9,14 @@ import {
     TouchableOpacity,
     FlatList,
 } from 'react-native'; //varios elementos
-//import { FlatList } from 'react-native-gesture-handler';
-import Sound from 'react-native-sound';
+import {playLocalSound} from './mis-componentes';
 
 const DATA = [
     {
-        key:'00',
+        key: '00',
         titulo: "XALIMAKGATSOKGNI TUTUNAKÚ",
         texto: "El idioma tutunakú es uno de los 68 idiomas originarios de México, y pertenece a la familia totonaco-tepehua. Su escritura y pronunciación está basada en 23 grafías, ¡conócelas!",
-        imagen: require('../assets/_11/img1.png'),
+        imagen: require('../assets/_11/img2.png'),
         audio: 'au_1_01.mp3',
     }
 ];
@@ -55,36 +54,12 @@ const Boton = (props) => {
     )
 }
 
-// Sonido ===========================================================================
-Sound.setCategory('Playback', false);
-function playLocalSound (file) {
-    var mySound = new Sound(file, Sound.MAIN_BUNDLE, (error)=>{
-      if(error) {
-        console.log('Error al cargar: '+error);
-        return;
-      }
-      else {
-        mySound.play((success)=>{
-          if(success){
-            console.log('Reproducción exitosa');
-          }
-          else {
-            console.log('Problema al reproducir');
-          }
-        })
-      }
-    });
-    //mySound.setVolume(0.9);
-    //Sound.stop();
-    mySound.release();
-  }
-
 /*<Text style={{fontSize:16, fontFamily:'OpenSans-Light'}}>
     {props-autor}
 </Text>*/
 const Item = (props) => {
     return (
-        <View style={{margin:12}}>
+        <View style={{ margin: 12 }}>
             <Text style={{ fontSize: 20, fontFamily: 'OpenSans-Bold' }}>
                 {props.titulo}
             </Text>
@@ -107,8 +82,8 @@ function Grafias({ navigation }) {
             padding: 24
         }}>
             <FlatList data={DATA} renderItem={
-                ({item}) => <Item titulo={item.titulo} texto={item.texto} imagen={item.imagen} audio={item.audio} /> 
-            }/>
+                ({ item }) => <Item titulo={item.titulo} texto={item.texto} imagen={item.imagen} audio={item.audio} />
+            } />
         </View>
     );
 }

@@ -9,27 +9,28 @@
 
 // Importar todo los necesario ==========================================================
 //import 'react-native-gesture-handler'; //para terminar instalación de este modulo?
-import React from 'react'; //estrictamente necesario
+import React, { useEffect } from 'react'; //estrictamente necesario
 import { NavigationContainer } from '@react-navigation/native'; //navegación contenedor
 import { createStackNavigator } from '@react-navigation/stack'; //navegación stack
 //import Sound from 'react-native-sound'; //para reproducir sonidos
 import {
   SafeAreaView,
-  StyleSheet,
-  ScrollView,
+  //StyleSheet,
+  //ScrollView,
   View,
   Text,
   StatusBar,
-  Button,
+  //Button,
   TouchableOpacity,
+  AppState,
 } from 'react-native'; //varios elementos
+import { stopSound } from './src/mis-componentes';
 
 // Youtube =================================================================================
 //import YoutubePlayer from 'react-native-youtube-iframe' //para insertar video de youtube
 //import YouTube, { YouTubeStandaloneIOS, YouTubeStandaloneAndroid } from 'react-native-youtube';
 
 // Pantallas - Screens ==================================================================================
-//import Externo from './_externo';
 import Portada from "./src/_00_portada";
 import Principal from "./src/_01_principal";
 
@@ -76,6 +77,12 @@ import Colab from "./src/_92_colaboradores";
 
 const Stack = createStackNavigator();
 
+const _handleAppStateChange = (nextAppState) => {
+  console.log(AppState.currentState);
+  console.log(nextAppState);
+  stopSound();
+}
+
 // App principal ====================================================================================
 // Usar prop options en Stack.Screen para poner el título con ortografía correcta en donde sea necesario
 // Usar prop screenOptions en Stack.Navigator para establecer estilo base de las Screens
@@ -86,8 +93,20 @@ const Stack = createStackNavigator();
 // azul '#004AAD'
 //<StatusBar barStyle="light-content" backgroundColor='black' />
 const App: () => React$Node = () => {
+
+  useEffect(() => {
+    AppState.addEventListener("change", _handleAppStateChange);
+
+    return () => {
+      AppState.removeEventListener("change", _handleAppStateChange);
+    }
+  }, []); //array vacío para ejecutar solo al montar y desmontar, y no en cada render
+
   return (
-    <NavigationContainer>
+    <NavigationContainer onStateChange={(state) => {
+      console.log("New state is ", state);
+      stopSound();
+    }}>
       <StatusBar barStyle="light-content" backgroundColor='black' />
 
       <Stack.Navigator initialRouteName="Portada" screenOptions={{

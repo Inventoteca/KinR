@@ -9,8 +9,7 @@ import {
     TouchableOpacity,
     FlatList,
 } from 'react-native'; //varios elementos
-//import { FlatList } from 'react-native-gesture-handler';
-import Sound from 'react-native-sound';
+import { playLocalSound } from './mis-componentes';
 
 const DATA = [
     { key: "1", esp: "Apaxtle", tut: "Akgsawat", foto: require("../assets/_33/uc1.png"), audio: "au_3_uc1.mp3" },
@@ -62,30 +61,6 @@ const Boton = (props) => {
             </Text>
         </TouchableOpacity>
     )
-}
-
-// Sonido ===========================================================================
-Sound.setCategory('Playback', false);
-function playLocalSound(file) {
-    var mySound = new Sound(file, Sound.MAIN_BUNDLE, (error) => {
-        if (error) {
-            console.log('Error al cargar: ' + error);
-            return;
-        }
-        else {
-            mySound.play((success) => {
-                if (success) {
-                    console.log('Reproducción exitosa');
-                }
-                else {
-                    console.log('Problema al reproducir');
-                }
-            })
-        }
-    });
-    //mySound.setVolume(0.9);
-    //Sound.stop();
-    mySound.release();
 }
 
 /*<Text style={{fontSize:16, fontFamily:'OpenSans-Light'}}>
