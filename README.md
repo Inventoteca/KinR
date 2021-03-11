@@ -30,7 +30,7 @@ https://github.com/ReactNativeNews/React-Native-Apps
 
 Proyecto creado con react-native init  
 ```
-npx react-native init AwesomeProject
+npx react-native init Kintachuwin
 ```  
 
 ---------
