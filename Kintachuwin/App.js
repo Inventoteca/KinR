@@ -1,8 +1,13 @@
 /**
  * Kintachuwin App
+ *
+ * App para el aprendizaje del idioma totonaco.
+ * Este archivo contiene la estructura de navegación.
+ * El contenido de las pantallas se encuntra en varios archivos que se importan.
+ *  
  * Editado desde Sample React Native App
  * https://github.com/facebook/react-native
- * 
+ *
  * @format
  * @flow strict-local
  */

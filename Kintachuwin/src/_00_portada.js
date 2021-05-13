@@ -6,6 +6,7 @@ import {
     //Button,
     TouchableOpacity,
     AppState,
+    ImageBackground,
 } from 'react-native'; //varios elementos
 
 const Imgn = (props) => {
@@ -64,10 +65,12 @@ function Portada({ navigation }) {
     }, []);
     */
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'white', padding: 24 }}>
-            <Imgn source={require('../assets/logo.png')} width={320} />
-            <Boton title="Entrar" onPress={() => navigation.navigate('Principal')} />
-            <Imgn source={require('../assets/xanay.png')} width={200} />
+        <View style={{ flex: 1, backgroundColor: 'yellow'}}>
+            <ImageBackground source={require('../assets/fondo.png')} style={{ flex: 1, resizeMode: 'cover', justifyContent: 'center', alignItems: 'center'}}>
+                <Imgn source={require('../assets/logo.png')} width={320} />
+                <Boton title="Entrar" onPress={() => navigation.navigate('Principal')} />
+                <Imgn source={require('../assets/xanay.png')} width={200} />
+            </ImageBackground>
         </View>
     );
 }
