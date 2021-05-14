@@ -342,3 +342,16 @@ https://reactjs.org/docs/hooks-reference.html
 
 Ejemplos de export  
 https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export  
+
+Poner imagen de fondo  
+https://reactnative.dev/docs/imagebackground  
+ImageBackground hereda props de Image.  
+```
+import { ImageBackground } from "react-native";
+
+<View style={styles.container}>
+  <ImageBackground source={image} style={styles.image}>
+    <Text style={styles.text}>Inside</Text>
+  </ImageBackground>
+</View>
+```
