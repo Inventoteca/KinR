@@ -4,79 +4,15 @@
  * Cada botón tiene un icono para identificarlo fácilmente.
  */
 
-import React from 'react'; //estrictamente necesario
-import {
+import React from 'react'; //librería principal
+import {//importar varios elementos
     View,
     Text,
-    Button,
-    Image,
-    TouchableHighlight,
-    TouchableNativeFeedback,
-    TouchableOpacity,
     ScrollView,
     ImageBackground,
-    StyleSheet,
-} from 'react-native'; //varios elementos
-
-const Imgn = (props) => {
-    const i = Image.resolveAssetSource(props.source);
-    const r = i.height / i.width; //ratio
-    const w = props.width; //base width
-    const h = w * r; //adjusted height
-    return (
-        <View style={{ alignItems: 'flex-start' }} >
-            <Image source={props.source} style={{ width: w, height: h }} />
-        </View>
-    );
-}
-
-const Boton = (props) => {
-    return (
-        <TouchableOpacity
-            style={{
-                borderColor: 'gray',
-                borderWidth: 1,
-                borderRadius: 4,
-                padding: 6,
-                backgroundColor: 'whitesmoke',
-                margin: 4,
-                alignItems: 'center'
-            }}
-            onPress={props.onPress}
-        >
-            <Text style={{ fontFamily: 'OpenSans-Regular', fontSize: 16 }}>
-                {props.title}
-            </Text>
-        </TouchableOpacity>
-    )
-}
-
-const BotonImgTxt = (props) => {
-    return (
-        <TouchableOpacity
-            style={{
-                borderColor: 'gray',
-                borderWidth: 0,
-                borderRadius: 4,
-                padding: 4,
-                backgroundColor: 'whitesmoke',
-                margin: 6,
-                alignItems: 'center',
-                flexDirection: 'row', //horizontal
-                shadowColor: 'black',
-                shadowRadius: 8, //solo iOS
-                elevation: 6,
-            }}
-            onPress={props.onPress}
-        >
-            <Imgn source={props.source} width={64} />
-
-            <Text style={{flex: 1, fontFamily: 'OpenSans-Regular', fontSize: 16, marginLeft: 32 }}>
-                {props.title}
-            </Text>
-        </TouchableOpacity>
-    )
-}
+} from 'react-native';
+// importar componentes personalizados
+import { BotonImgTxt, Styles } from './mis-componentes';
 
 // justifyContent: 'center'
 // resizeMode='contain'
@@ -92,11 +28,11 @@ function Principal({ navigation }) {
         }}>
             <ImageBackground source={require('../assets/fondo.png')} style={{ flex: 1, resizeMode: 'cover'}}>
             <ScrollView contentContainerStyle={{ padding: 24 }}>
-                <Text style={styles.titulo}>
-                    ¡HOLA, <Text style={styles.cursiva}>TLEN, SKGATLEN!</Text>
+                <Text style={Styles.titulo}>
+                    ¡HOLA, <Text style={Styles.cursiva}>TLEN, SKGATLEN!</Text>
                 </Text>
-                <Text style={styles.texto}>
-                    Nos da gusto que te acerques a conocer el idioma y la cultura <Text style={styles.cursiva}>tutunakú.</Text>
+                <Text style={Styles.texto}>
+                    Nos da gusto que te acerques a conocer el idioma y la cultura <Text style={Styles.cursiva}>tutunakú.</Text>
                     El contenido de esta App considera la variante de Tuxtla, Puebla y Filomeno Mata, Veracruz.
                     Esperamos pronto agregar más variantes de este idioma a nuestro contenido.{"\n\n"}
                     ¡Que lo disfrutes!
@@ -116,28 +52,5 @@ function Principal({ navigation }) {
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    titulo: {
-        // Título normal
-        fontSize:20, fontFamily:'OpenSans-Bold', backgroundColor: '#FFFFFFd0'
-    },
-    texto: {
-        // Texto normal
-        fontSize:16, fontFamily:'OpenSans-Regular', marginTop:24, marginBottom:24, backgroundColor: '#FFFFFFd0'
-    },
-    cursiva: {
-        // Usar dentro de un bloque normal para cambiar a cursiva
-        fontStyle:'italic', fontWeight:'normal'
-    },
-    autor: {
-        // Texto de bajo peso para nombres de autores
-        fontSize:16, fontFamily:'OpenSans-Light', backgroundColor: '#FFFFFFd0'
-    },
-    tutunaku: {
-        // Texto en cursivas para bloques escritos solo en tutunakú
-        fontSize:16, fontFamily:'OpenSans-Italic', marginTop:24, marginBottom:24
-    }
-});
 
 export default Principal;

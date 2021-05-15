@@ -4,20 +4,15 @@
  * El boton no tiene texto, solo un icono. Es como la pantalla grafías.
  */
 
-import React from 'react'; //estrictamente necesario
-import {
+import React from 'react'; //librería principal
+import {//importar varios elementos
     View,
     Text,
-    //Button,
-    Image,
-    //TouchableHighlight,
-    //TouchableNativeFeedback,
-    TouchableOpacity,
     FlatList,
-    StyleSheet,
     ImageBackground
-} from 'react-native'; //varios elementos
-import {playLocalSound} from './mis-componentes';
+} from 'react-native';
+// importar componentes personalizados
+import {playLocalSound, Imgn, BotonImg, Styles} from './mis-componentes';
 
 const DATA = [
     {
@@ -29,74 +24,13 @@ const DATA = [
     }
 ];
 
-const Imgn = (props) => {
-    const i = Image.resolveAssetSource(props.source);
-    const r = i.height / i.width; //ratio
-    const w = props.width; //base width
-    const h = w * r; //adjusted height
-    return (
-        <View style={{ alignItems: 'center' }}>
-            <Image source={props.source} style={{ width: w, height: h }} />
-        </View>
-    );
-}
-
-const Boton = (props) => {
-    return (
-        <TouchableOpacity
-            style={{
-                borderColor: 'gray',
-                borderWidth: 1,
-                borderRadius: 4,
-                padding: 6,
-                backgroundColor: 'whitesmoke',
-                margin: 4,
-                alignItems: 'center'
-            }}
-            onPress={props.onPress}
-        >
-            <Text style={{ fontFamily: 'OpenSans-Regular', fontSize: 16 }}>
-                {props.title}
-            </Text>
-        </TouchableOpacity>
-    )
-}
-
-const BotonImg = (props) => {
-    return (
-        <View style={{ alignItems: 'center' }}>
-        <TouchableOpacity
-            style={{
-                borderColor: 'gray',
-                borderWidth: 0,
-                borderRadius: 4,
-                padding: 4,
-                backgroundColor: 'whitesmoke',
-                margin: 6,
-                alignItems: 'center',
-                //flexDirection: 'row', //horizontal
-                shadowColor: 'black',
-                shadowRadius: 6, //solo iOS
-                elevation: 6,
-            }}
-            onPress={props.onPress}
-        >
-            <Imgn source={props.source} width={64} />
-        </TouchableOpacity>
-        </View>
-    )
-}
-
-/*<Text style={{fontSize:16, fontFamily:'OpenSans-Light'}}>
-    {props-autor}
-</Text>*/
 const Item = (props) => {
     return (
         <View style={{margin:12}}>
-            <Text style={styles.titulo}>
+            <Text style={Styles.titulo}>
                 {props.titulo}
             </Text>
-            <Text style={styles.texto}>
+            <Text style={Styles.texto}>
                 {props.texto}
             </Text>
             <Imgn source={props.imagen} width={320} />
@@ -122,28 +56,5 @@ function Pronombres({ navigation }) {
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    titulo: {
-        // Título normal
-        fontSize:20, fontFamily:'OpenSans-Bold', backgroundColor: '#FFFFFFd0'
-    },
-    texto: {
-        // Texto normal
-        fontSize:16, fontFamily:'OpenSans-Regular', marginTop:24, marginBottom:24, backgroundColor: '#FFFFFFd0'
-    },
-    cursiva: {
-        // Usar dentro de un bloque normal para cambiar a cursiva
-        fontStyle:'italic', fontWeight:'normal'
-    },
-    autor: {
-        // Texto de bajo peso para nombres de autores
-        fontSize:16, fontFamily:'OpenSans-Light', backgroundColor: '#FFFFFFd0'
-    },
-    tutunaku: {
-        // Texto en cursivas para bloques escritos solo en tutunakú
-        fontSize:16, fontFamily:'OpenSans-Italic', marginTop:24, marginBottom:24
-    }
-});
 
 export default Pronombres;

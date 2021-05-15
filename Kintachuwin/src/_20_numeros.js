@@ -1,3 +1,11 @@
+/**
+ * Números
+ * Contiene una lista de botones que llevan a una pantalla con descripción,
+ * imagen (tabla) y un botón para reproducir audio.
+ * Esa pantalla puede ser la misma, pero al presionar el botón se pasan
+ * parámetros de modo que se muestre contenido diferente.
+ */
+
 import React from 'react'; //estrictamente necesario
 import {
   View,
@@ -7,28 +15,10 @@ import {
   TouchableHighlight,
   TouchableNativeFeedback,
   TouchableOpacity,
+  StyleSheet,
+  ImageBackground
 } from 'react-native'; //varios elementos
-
-const Boton = (props) => {
-    return (
-        <TouchableOpacity 
-            style={{
-                borderColor:'gray', 
-                borderWidth:1, 
-                borderRadius:4, 
-                padding:6, 
-                backgroundColor:'whitesmoke', 
-                margin:4,
-                alignItems:'center'
-            }}
-            onPress={props.onPress}
-        >
-            <Text style={{fontFamily:'OpenSans-Regular', fontSize:16}}>
-                {props.title}
-            </Text>
-        </TouchableOpacity>
-    )
-}
+import {Boton, Styles} from './mis-componentes';
 
 function Numeros({ navigation }) {
     return (
@@ -37,23 +27,27 @@ function Numeros({ navigation }) {
             alignItems:'stretch', 
             justifyContent:'flex-start', 
             backgroundColor:'white', 
-            padding:24}}
-        >
+            padding:24
+        }}>
             {/*<Image source={require('../assets/logo.png')} 
                 style={{width:320, height:60}} resizeMode='contain'
             />*/}
-            <Text style={{fontSize:20, fontFamily:'OpenSans-Bold'}}>
+            <Text style={Styles.titulo}>
                 NÚMEROS
             </Text>
-            <Text style={{fontSize:16, fontFamily:'OpenSans-Light'}}>
+            <Text style={Styles.autor}>
                 Por José Santiago y Juan M. Díaz
             </Text>
-            <Text style={{fontSize:16, fontFamily:'OpenSans-Regular', marginTop:24, marginBottom:24}}>
-                Cuando se cuenta en el idioma tutunakú, los números siempre van acompañados por
-                un prefijo que está determinado la forma o aspecto del elemento que se está contando.
+            <Text style={Styles.texto}>
+                Cuando se cuenta en el idioma <Text style={Styles.cursiva}>tutunakú</Text>, 
+                los números siempre van acompañados por un prefijo que está determinado la 
+                forma o aspecto del elemento que se está contando. Estos prefijos solo se 
+                utilizan para contar de 1 al 20, después del 20 no es necesario usarlos.
                 {"\n\n"}
                 Aquí te presentamos 24 prefijos que sirven para contar un sinfín de cosas.
                 Podrás aprender la escritura y pronunciación en la variante central alto.
+                {"\n\n"}
+                ¿Qué quieres aprender a contar?
             </Text>
             
             <Boton title="Contar" onPress={() => navigation.navigate('Contar')} />
