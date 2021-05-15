@@ -87,6 +87,6 @@ const styles = StyleSheet.create({
         // Texto en cursivas para bloques escritos solo en tutunakú
         fontSize:16, fontFamily:'OpenSans-Italic', marginTop:24, marginBottom:24
     }
-  });
+});
 
 export default Cuento2;

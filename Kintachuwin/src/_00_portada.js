@@ -1,3 +1,10 @@
+/**
+ * Portada
+ * Es la pantalla que aparece cuando inica la app.
+ * Contiene el logo de la app, el icono en grande, 
+ * el logo de Xanay y un botón para pasar a la siguiente pantalla.
+ */
+
 import React, { Component, useEffect } from 'react'; //estrictamente necesario
 import {
     View,
@@ -5,6 +12,7 @@ import {
     Image,
     //Button,
     TouchableOpacity,
+    TouchableHighlight,
     AppState,
     ImageBackground,
 } from 'react-native'; //varios elementos
@@ -23,7 +31,7 @@ const Imgn = (props) => {
 
 const Boton = (props) => {
     return (
-        <TouchableOpacity
+        <TouchableHighlight
             style={{
                 borderColor: 'gray',
                 borderWidth: 1,
@@ -36,11 +44,13 @@ const Boton = (props) => {
                 marginBottom: 48,
             }}
             onPress={props.onPress}
+            underlayColor="white"
+            activeOpacity={0.2}
         >
             <Text style={{ fontFamily: 'OpenSans-Regular', fontSize: 16 }}>
                 {props.title}
             </Text>
-        </TouchableOpacity>
+        </TouchableHighlight>
     )
 }
 
@@ -68,8 +78,8 @@ function Portada({ navigation }) {
         <View style={{ flex: 1, backgroundColor: 'yellow'}}>
             <ImageBackground source={require('../assets/fondo.png')} style={{ flex: 1, resizeMode: 'cover', justifyContent: 'center', alignItems: 'center'}}>
                 <Imgn source={require('../assets/logo.png')} width={320} />
-                <Boton title="Entrar" onPress={() => navigation.navigate('Principal')} />
                 <Imgn source={require('../assets/xanay.png')} width={200} />
+                <Boton title="Entrar" onPress={() => navigation.navigate('Principal')} />
             </ImageBackground>
         </View>
     );
