@@ -58,6 +58,13 @@ import Contar from "./src/_21_contar";
 import Colores from "./src/_31_colores";
 import Cuerpo from "./src/_32_cuerpo";
 import Cocina from "./src/_33_cocina";
+import Adverbios from "./src/_34_adverbios.js";
+import Elementos from "./src/_35_elementos.js"
+import Familia from "./src/_36_familia";
+import Lugares from "./src/_37_lugares";
+import Sabores from "./src/_38_sabores";
+import Sentimientos from "./src/_39_sentimientos";
+import Tiempo from "./src/_3a_tiempo";
 
 import Anfibios from "./src/_41_anfibios";
 import Aves from "./src/_42_aves";
@@ -142,6 +149,13 @@ const App: () => React$Node = () => {
         <Stack.Screen name="Colores" component={Colores} options={{ title: "Colores" }} />
         <Stack.Screen name="Cuerpo" component={Cuerpo} options={{ title: "Partes del cuerpo" }} />
         <Stack.Screen name="Cocina" component={Cocina} options={{ title: "Utensilios de cocina" }} />
+        <Stack.Screen name="Adver" component={Adverbios} options={{ title: "Advervios de lugar" }} />
+        <Stack.Screen name="Elementos" component={Elementos} options={{ title: "Elementos naturales" }} />
+        <Stack.Screen name="Familia" component={Familia} options={{ title: "Integrantes de la familia" }} />
+        <Stack.Screen name="Lugares" component={Lugares} options={{ title: "Lugares" }} />
+        <Stack.Screen name="Sabores" component={Sabores} options={{ title: "Sabores y olores" }} />
+        <Stack.Screen name="Senti" component={Sentimientos} options={{ title: "Sentimientos" }} />
+        <Stack.Screen name="Tiempo" component={Tiempo} options={{ title: "Tiempo" }} />
 
         <Stack.Screen name="Anfibios" component={Anfibios} />
         <Stack.Screen name="Aves" component={Aves} />

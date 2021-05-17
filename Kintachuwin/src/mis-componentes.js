@@ -130,7 +130,7 @@ const BotonImgTxt = (props) => {
 // Hoja de estilos
 const Styles = StyleSheet.create({
     titulo: {// Título normal
-        fontSize: 20, fontFamily: 'OpenSans-Bold', backgroundColor: '#FFFFFFd0'
+        fontSize: 20, fontFamily: 'OpenSans-Bold', color: 'black', backgroundColor: '#FFFFFFd0'
     },
     texto: {// Texto normal
         fontSize: 16, fontFamily: 'OpenSans-Regular', marginTop: 24, marginBottom: 24, backgroundColor: '#FFFFFFd0'
@@ -149,6 +149,10 @@ const Styles = StyleSheet.create({
 // Para exportar todo usar corchetes y separar con comas
 //export default playLocalSound;
 export {playLocalSound, stopSound, Imgn, Boton, BotonImg, BotonImgTxt, Styles};
+
+// Código para copiar
+// Imagen de fondo
+//<ImageBackground source={require('../assets/fondo.png')} style={{ flex: 1, resizeMode: 'cover' }}>
 
 
 // Código no utilizado =========================================================

@@ -1,15 +1,16 @@
-import React from 'react'; //estrictamente necesario
-import {
-    View,
-    Text,
-    //Button,
-    Image,
-    //TouchableHighlight,
-    //TouchableNativeFeedback,
-    TouchableOpacity,
-    FlatList,
-} from 'react-native'; //varios elementos
-import { playLocalSound } from './mis-componentes';
+/**
+ * Partes del cuerpo
+ */
+
+ import React from 'react'; //librería principal
+ import {//importar varios elementos
+     View,
+     Text,
+     FlatList,
+     ImageBackground
+ } from 'react-native'; //varios elementos
+ // importar componentes personalizados
+ import { playLocalSound, Imgn, BotonImg, Styles } from './mis-componentes';
 
 const DATA = [
     { key: "1", esp: "Cabeza", tut: "Akgxakga", foto: require("../assets/_32/pc1.png"), audio: "au_3_pc1.mp3" },
@@ -78,86 +79,41 @@ const DATA = [
     { key: "64", esp: "Riñon", tut: "Pástapu", foto: require("../assets/_32/pc64.png"), audio: "au_3_pc64.mp3" },
 ];
 
-const Imgn = (props) => {
-    const i = Image.resolveAssetSource(props.source);
-    const r = i.height / i.width; //ratio
-    const w = props.width; //base width
-    const h = w * r; //adjusted height
-    return (
-        <View style={{ alignItems: 'flex-start' }} >
-            <Image source={props.source} style={{ width: w, height: h }} />
-        </View>
-    );
-}
-
-const Boton = (props) => {
-    return (
-        <TouchableOpacity
-            style={{
-                borderColor: 'gray',
-                borderWidth: 1,
-                borderRadius: 4,
-                padding: 6,
-                backgroundColor: 'whitesmoke',
-                marginTop: 6,
-                alignItems: 'center'
-            }}
-            onPress={props.onPress}
-        >
-            <Text style={{ fontFamily: 'OpenSans-Regular', fontSize: 16 }}>
-                {props.title}
-            </Text>
-        </TouchableOpacity>
-    )
-}
-
-/*<Text style={{fontSize:16, fontFamily:'OpenSans-Light'}}>
-    {props-autor}
-</Text>*/
-/*<Text style={{ fontSize: 16, fontFamily: 'OpenSans-Regular', marginTop: 0, marginBottom: 0 }}>
-                {props.texto}
-            </Text>*/
 const Item = (props) => {
     return (
-        <View style={{ margin: 12 }}>
-            <Text style={{ fontSize: 20, fontFamily: 'OpenSans-Bold', color: 'black' }}>
-                <Text style={{ fontStyle: 'italic', fontWeight: 'normal' }}>{props.tut} - </Text>
-                <Text style={{ fontStyle: 'normal', fontWeight: 'normal' }}>{props.esp} </Text>
-            </Text>
-            <Imgn source={props.foto} width={240} />
-            <Boton title="Escuchar" onPress={() => playLocalSound(props.audio)} />
+        <View style={{ flexDirection: 'row', marginBottom: 24 }}>
+            <Imgn source={props.foto} width={150} />
+            <View style={{ flex: 1 }}>
+                <Text style={Styles.titulo}>
+                    <Text style={Styles.cursiva}>{props.tut}</Text> - {props.esp}
+                    {/*<Text style={{ fontStyle: 'normal', fontWeight: 'normal' }}>{props.esp} </Text>*/}
+                </Text>
+                <BotonImg source={require('../assets/audio.png')} onPress={() => playLocalSound(props.audio)} />
+            </View>
         </View>
     );
 }
 
 function Cuerpo({ navigation }) {
     return (
-        <View style={{
-            flex: 1,
-            //alignItems: 'stretch',
-            //justifyContent: 'flex-start',
-            backgroundColor: 'white',
-            //padding: 0,
-        }}>
-            <FlatList
-                // Poner padding en style normal hace que el último elemento
-                // no sea completamente visible (se ve cortado).
-                // ¿Por qué contentContainerStyle si funciona?
-                // En la documentanción de FlatList no aparece esa prop,
-                // sin embargo aparece en la documentación de ScrollView.
-                //style={{ flex: 1, padding: 0, paddingBottom: 0, margin: 24 }}
-                contentContainerStyle={{ padding: 24 }}
-                data={DATA}
-                renderItem={({ item }) => <Item
-                    esp={item.esp}
-                    tut={item.tut}
-                    //texto={item.texto}
-                    foto={item.foto}
-                    //tabla={item.tabla}
-                    audio={item.audio}
-                />}
-            />
-
+        <View style={{ flex: 1 }}>
+            <ImageBackground source={require('../assets/fondo.png')} style={{ flex: 1, resizeMode: 'cover' }}>
+                <FlatList
+                    // Poner padding en style normal hace que el último elemento no sea completamente visible 
+                    // (se ve cortado). ¿Por qué contentContainerStyle si funciona? En la documentanción de 
+                    // FlatList no aparece esa prop, sin embargo aparece en la documentación de ScrollView.
+                    contentContainerStyle={{ padding: 24 }}
+                    data={DATA}
+                    renderItem={({ item }) => <Item
+                        esp={item.esp}
+                        tut={item.tut}
+                        //texto={item.texto}
+                        foto={item.foto}
+                        //tabla={item.tabla}
+                        audio={item.audio}
+                    />}
+                />
+            </ImageBackground>
         </View>
     );
 }

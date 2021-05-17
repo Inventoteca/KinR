@@ -1,15 +1,19 @@
-import React from 'react'; //estrictamente necesario
-import {
+/**
+ * Contar
+ * Esta pantalla muestra un texto, una imagen y un botón para reproducir audio.
+ * Los datos que se muestran cambian dependiendo del valor que se recibe desde
+ * la pantalla anterior.
+ */
+
+import React from 'react'; //librería principal
+import {//importar varios elementos
     View,
     Text,
-    //Button,
-    Image,
-    //TouchableHighlight,
-    //TouchableNativeFeedback,
-    TouchableOpacity,
     FlatList,
-} from 'react-native'; //varios elementos
-import { playLocalSound } from './mis-componentes';
+    ImageBackground
+} from 'react-native';
+// importar componentes personalizados
+import { playLocalSound, Imgn, Boton, BotonImg, Styles } from './mis-componentes';
 
 const DATA = [
     { key: "1", titulo: "Ak", texto: "Se utiliza para contar trozos o unidades de medición, como el metro", foto: require("../assets/_21/ak_f.jpg"), tabla: require("../assets/_21/ak_t.png"), audio: "au_2_ak.mp3" },
@@ -38,86 +42,20 @@ const DATA = [
     { key: "24", titulo: "Tuu", texto: "Se utiliza para contar jicarazos, platos con comida o cazos de agua", foto: require("../assets/_21/tuu_f.jpg"), tabla: require("../assets/_21/tuu_t.png"), audio: "au_2_tuu.mp3" },
 ];
 
-const Imgn = (props) => {
-    const i = Image.resolveAssetSource(props.source);
-    const r = i.height / i.width; //ratio
-    const w = props.width; //base width
-    const h = w * r; //adjusted height
-    return (
-        <View>
-            <Image source={props.source} style={{ width: w, height: h }} />
-        </View>
-    );
-}
-
-const Boton = (props) => {
-    return (
-        <TouchableOpacity
-            style={{
-                borderColor: 'gray',
-                borderWidth: 1,
-                borderRadius: 4,
-                padding: 6,
-                backgroundColor: 'whitesmoke',
-                margin: 4,
-                alignItems: 'center'
-            }}
-            onPress={props.onPress}
-        >
-            <Text style={{ fontFamily: 'OpenSans-Regular', fontSize: 16 }}>
-                {props.title}
-            </Text>
-        </TouchableOpacity>
-    )
-}
-
-/*<Text style={{fontSize:16, fontFamily:'OpenSans-Light'}}>
-    {props-autor}
-</Text>*/
 const Item = (props) => {
     return (
-        <View style={{ margin: 0 }}>
-            <Text style={{ fontSize: 20, fontFamily: 'OpenSans-Bold' }}>
-                {props.titulo}
+        <View style={{ marginBottom: 16 }}>
+            <Text style={Styles.titulo}>
+                <Text style={Styles.cursiva}>{props.titulo}</Text>
             </Text>
-            <Text style={{ fontSize: 16, fontFamily: 'OpenSans-Regular', marginTop: 0, marginBottom: 0 }}>
+            <Text style={Styles.texto}>
                 {props.texto}
             </Text>
-            <Imgn source={props.foto} width={240} />
-            <Imgn source={props.tabla} width={340} />
-            <Boton title="Escuchar" onPress={() => playLocalSound(props.audio)} />
+            {/*<Imgn source={props.foto} width={240} />*/}
+            <Imgn source={props.tabla} width={350} />
+            <BotonImg source={require('../assets/audio.png')} onPress={() => playLocalSound(props.audio)} />
         </View>
     );
-}
-
-const Header = () => {
-    return (
-        <View style={{
-            flex: 1,
-            //  alignItems: 'stretch',
-            //justifyContent: 'flex-start',
-            //backgroundColor: 'white',
-            //padding: 24
-        }}
-        >
-            {/*<Image source={require('../assets/logo.png')} 
-                style={{width:320, height:60}} resizeMode='contain'
-            />*/}
-            <Text style={{ fontSize: 20, fontFamily: 'OpenSans-Bold' }}>
-                NÚMEROS
-            </Text>
-            <Text style={{ fontSize: 16, fontFamily: 'OpenSans-Light' }}>
-                Por José Santiago y Juan M. Díaz
-            </Text>
-            <Text style={{ fontSize: 16, fontFamily: 'OpenSans-Regular', marginTop: 24, marginBottom: 24 }}>
-                Cuando se cuenta en el idioma tutunakú, los números siempre van acompañados por
-                un prefijo que está determinado la forma o aspecto del elemento que se está contando.
-                {"\n\n"}
-                Aquí te presentamos 24 prefijos que sirven para contar un sinfín de cosas.
-                Podrás aprender la escritura y pronunciación en la variante central alto.
-            </Text>
-        </View>
-    )
 }
 
 function Contar({ navigation }) {
@@ -126,9 +64,10 @@ function Contar({ navigation }) {
             flex: 1,
             //alignItems: 'stretch',
             //justifyContent: 'flex-start',
-            backgroundColor: 'white',
+            //backgroundColor: 'white',
             //padding: 0,
         }}>
+            <ImageBackground source={require('../assets/fondo.png')} style={{ flex: 1, resizeMode: 'cover' }}>
             <FlatList
                 // Poner padding en style normal hace que el último elemento
                 // no sea completamente visible (se ve cortado).
@@ -145,14 +84,11 @@ function Contar({ navigation }) {
                     tabla={item.tabla}
                     audio={item.audio}
                 />}
-
             //ListHeaderComponent={Header}
             />
-
+            </ImageBackground>
         </View>
     );
 }
 
 export default Contar;
-
-//<View style={{height:24}}></View>
