@@ -91,7 +91,7 @@ const BotonImg = (props) => {
             }}
             onPress={props.onPress}
         >
-            <Imgn source={props.source} width={64} />
+            <Imgn source={props.source} width={48} />
         </TouchableOpacity>
         </View>
     )
@@ -129,6 +129,9 @@ const BotonImgTxt = (props) => {
 
 // Hoja de estilos
 const Styles = StyleSheet.create({
+    simple: {// Texto normal
+        fontSize: 16, fontFamily: 'OpenSans-Regular', marginLeft: 8, color: 'white'
+    },
     titulo: {// Título normal
         fontSize: 20, fontFamily: 'OpenSans-Bold', color: 'black', backgroundColor: '#FFFFFFd0'
     },
@@ -150,9 +153,22 @@ const Styles = StyleSheet.create({
 //export default playLocalSound;
 export {playLocalSound, stopSound, Imgn, Boton, BotonImg, BotonImgTxt, Styles};
 
-// Código para copiar
+// Código para copiar reutilizar
+
 // Imagen de fondo
 //<ImageBackground source={require('../assets/fondo.png')} style={{ flex: 1, resizeMode: 'cover' }}>
+
+// Cursiva
+//<Text style={Styles.cursiva}>
+
+/*
+<View style={{ flexDirection: 'row', alignItems: 'center'}}>
+                    <Imgn source={require('../assets/_40/imad.png')} width={64} />
+                    <Text style={Styles.texto}>Maderable</Text>
+                </View>
+*/
+
+//<BotonImg source={require('../assets/audio.png')} onPress={() => playLocalSound(props.audio)} />
 
 
 // Código no utilizado =========================================================
