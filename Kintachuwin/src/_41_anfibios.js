@@ -13,16 +13,27 @@ import {//importar varios elementos
 import { playLocalSound, Imgn, BotonImg, Styles } from './mis-componentes';
 
 const DATA = [
-    { key: "1", tut: "Akgpulut", esp: "Ajolote / Renacuajo", cie: "Anura", foto: require("../assets/_40/a1.jpg"), audio: "au_4_a1.mp3" },
-    { key: "2", tut: "Lixut", esp: "Rana ", cie: "Lithobathes berlandieri", foto: require("../assets/_40/a2.jpg"), audio: "au_4_a2.mp3" },
-    { key: "3", tut: "Tsurumpitpit", esp: "Rana chirriadora", cie: "Eleutherodactylus sp.", foto: require("../assets/_40/a3.jpg"), audio: "au_4_a3.mp3" },
-    { key: "4", tut: "Swakgakgat", esp: "Rana verde", cie: "Rheohyla miotympanum", foto: require("../assets/_40/a4.jpg"), audio: "au_4_a4.mp3" },
-    { key: "5", tut: "Tatuxktama", esp: "Salamandra negra", cie: "Aquiloeurycea cephalica", foto: require("../assets/_40/a5.jpg"), audio: "au_4_a5.mp3" },
-    { key: "6", tut: "Chichakg", esp: "Sapo", cie: "Rhinella horribilis", foto: require("../assets/_40/a6.jpg"), audio: "au_4_a6.mp3" },
-    { key: "7", tut: "Tsurumpitpit", esp: "Tlaconete", cie: "Bolitoglossa platydactyla", foto: require("../assets/_40/a7.jpg"), audio: "au_4_a7.mp3" },
+    { key: "1", flags: 1, tut: "Akgpulut", esp: "Ajolote / Renacuajo", cie: "Anura", foto: require("../assets/_40/a1.jpg"), audio: "au_4_a1.mp3" },
+    { key: "2", flags: 5, tut: "Lixut", esp: "Rana ", cie: "Lithobathes berlandieri", foto: require("../assets/_40/a2.jpg"), audio: "au_4_a2.mp3" },
+    { key: "3", flags: 33, tut: "Tsurumpitpit", esp: "Rana chirriadora", cie: "Eleutherodactylus sp.", foto: require("../assets/_40/a3.jpg"), audio: "au_4_a3.mp3" },
+    { key: "4", flags: 33, tut: "Swakgakgat", esp: "Rana verde", cie: "Rheohyla miotympanum", foto: require("../assets/_40/a4.jpg"), audio: "au_4_a4.mp3" },
+    { key: "5", flags: 33, tut: "Tatuxktama", esp: "Salamandra negra", cie: "Aquiloeurycea cephalica", foto: require("../assets/_40/a5.jpg"), audio: "au_4_a5.mp3" },
+    { key: "6", flags: 9, tut: "Chichakg", esp: "Sapo", cie: "Rhinella horribilis", foto: require("../assets/_40/a6.jpg"), audio: "au_4_a6.mp3" },
+    { key: "7", flags: 33, tut: "Tsurumpitpit", esp: "Tlaconete", cie: "Bolitoglossa platydactyla", foto: require("../assets/_40/a7.jpg"), audio: "au_4_a7.mp3" },
 ];
 
 const Item = (props) => {
+    // La variable flags se usa para determinar los iconos a mostrar
+    var fl = props.flags;
+    // El siguiente array almacena componentes (iconos) o null
+    var i1, i2, i3, i4, i5, i6;
+    if (fl&1) i1 = <Imgn source={require('../assets/_40/iino.png')} width={48} />;
+    if (fl&2) i2 = <Imgn source={require('../assets/_40/ipel.png')} width={48} />;
+    if (fl&4) i3 = <Imgn source={require('../assets/_40/iali.png')} width={48} />;
+    if (fl&8) i4 = <Imgn source={require('../assets/_40/imed.png')} width={48} />;
+    if (fl&16) i5 = <Imgn source={require('../assets/_40/icom.png')} width={48} />;
+    if (fl&32) i6 = <Imgn source={require('../assets/_40/imag.png')} width={48} />;
+
     return (
         <View style={{ flexDirection: 'row', marginBottom: 12 }}>
             <Imgn source={props.foto} width={150} />
@@ -41,12 +52,12 @@ const Item = (props) => {
                 </View>
                 <View style={{ flex: 1, flexDirection: 'row' }}>
                     <View style={{ flex: 1, flexDirection: 'row', flexWrap: 'wrap' }}>
-                        <Imgn source={require('../assets/_40/iali.png')} width={48} />
-                        <Imgn source={require('../assets/_40/ipel.png')} width={48} />
-                        <Imgn source={require('../assets/_40/iino.png')} width={48} />
-                        <Imgn source={require('../assets/_40/imed.png')} width={48} />
-                        <Imgn source={require('../assets/_40/imag.png')} width={48} />
-                        <Imgn source={require('../assets/_40/icom.png')} width={48} />
+                        {i1}
+                        {i2}
+                        {i3}
+                        {i4}
+                        {i5}
+                        {i6}
                     </View>
                     <BotonImg source={require('../assets/audio.png')} onPress={() => playLocalSound(props.audio)} />
                 </View>
@@ -105,6 +116,7 @@ function Anfibios({ navigation }) {
                         cie={item.cie}
                         foto={item.foto}
                         audio={item.audio}
+                        flags={item.flags}
                     />}
                 />
             </ImageBackground>
