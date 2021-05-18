@@ -59,11 +59,11 @@ const Item = (props) => {
                         {i5}
                         {i6}
                     </View>
-                    <BotonImg source={require('../assets/audio.png')} onPress={() => playLocalSound(props.audio)} />
+                    
                 </View>
+                
             </View>
-
-
+            <BotonImg source={require('../assets/audio.png')} onPress={() => playLocalSound(props.audio)} />
         </View>
     );
 }
