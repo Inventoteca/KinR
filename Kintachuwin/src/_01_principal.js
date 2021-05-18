@@ -32,10 +32,10 @@ function Principal({ navigation }) {
                     ¡HOLA, <Text style={Styles.cursiva}>TLEN, SKGATLEN!</Text>
                 </Text>
                 <Text style={Styles.texto}>
-                    Nos da gusto que te acerques a conocer el idioma y la cultura <Text style={Styles.cursiva}>tutunakú.</Text>
-                    El contenido de esta App considera la variante de Tuxtla, Puebla y Filomeno Mata, Veracruz.
-                    Esperamos pronto agregar más variantes de este idioma a nuestro contenido.{"\n\n"}
-                    ¡Que lo disfrutes!
+                    Nos da gusto que te acerques a conocer el idioma y la cultura 
+                    <Text style={Styles.cursiva}>tutunakú</Text>. El contenido de esta App considera 
+                    la variante de Tuxtla, Puebla y Filomeno Mata, Veracruz. Esperamos pronto agregar 
+                    más variantes de este idioma a nuestro contenido.{"\n\n"}¡Que lo disfrutes!
                 </Text>
 
                 <BotonImgTxt source={require('../assets/_01/m1.png')} title="Gramática" onPress={() => navigation.navigate('Gramatica')} />
