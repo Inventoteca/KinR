@@ -27,19 +27,20 @@ const Item = (props) => {
     var fl = props.flags;
     // El siguiente array almacena componentes (iconos) o null
     var i1, i2, i3, i4, i5, i6;
-    if (fl&1) i1 = <Imgn source={require('../assets/_40/iino.png')} width={48} />;
-    if (fl&2) i2 = <Imgn source={require('../assets/_40/ipel.png')} width={48} />;
-    if (fl&4) i3 = <Imgn source={require('../assets/_40/iali.png')} width={48} />;
-    if (fl&8) i4 = <Imgn source={require('../assets/_40/imed.png')} width={48} />;
-    if (fl&16) i5 = <Imgn source={require('../assets/_40/icom.png')} width={48} />;
-    if (fl&32) i6 = <Imgn source={require('../assets/_40/imag.png')} width={48} />;
+    if (fl & 1)  i1 = <Imgn source={require('../assets/_40/iino.png')} width={60} />;
+    if (fl & 2)  i2 = <Imgn source={require('../assets/_40/ipel.png')} width={60} />;
+    if (fl & 4)  i3 = <Imgn source={require('../assets/_40/iali.png')} width={60} />;
+    if (fl & 8)  i4 = <Imgn source={require('../assets/_40/imed.png')} width={60} />;
+    if (fl & 16) i5 = <Imgn source={require('../assets/_40/icom.png')} width={60} />;
+    if (fl & 32) i6 = <Imgn source={require('../assets/_40/imag.png')} width={60} />;
 
     return (
-        <View style={{ flexDirection: 'row', marginBottom: 12 }}>
-            <Imgn source={props.foto} width={150} />
+        <View style={{ flexDirection: 'column', marginBottom: 16 }}>
 
-            <View style={{ flex: 1 }}>
-                <View style={{ padding: 8, backgroundColor: '#FFFFFFd0' }}>
+            <View style={{ flexDirection: 'row' }}>
+                <Imgn source={props.foto} width={150} />
+
+                <View style={{ flex: 1, padding: 8, backgroundColor: '#FFFFFFd0' }}>
                     <Text style={{ fontSize: 16, fontFamily: 'OpenSans-BoldItalic' }}>
                         {props.tut}
                     </Text>
@@ -49,8 +50,7 @@ const Item = (props) => {
                     <Text style={{ fontSize: 16, fontFamily: 'OpenSans-Italic' }}>
                         {props.cie}
                     </Text>
-                </View>
-                <View style={{ flex: 1, flexDirection: 'row' }}>
+
                     <View style={{ flex: 1, flexDirection: 'row', flexWrap: 'wrap' }}>
                         {i1}
                         {i2}
@@ -59,10 +59,9 @@ const Item = (props) => {
                         {i5}
                         {i6}
                     </View>
-                    
                 </View>
-                
             </View>
+
             <BotonImg source={require('../assets/audio.png')} onPress={() => playLocalSound(props.audio)} />
         </View>
     );
