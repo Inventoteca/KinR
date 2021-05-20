@@ -74,7 +74,7 @@ const Item = (props) => {
                 </View>
             </View>
 
-            <BotonImg source={require('../assets/audio.png')} onPress={() => playLocalSound(props.audio)} />
+            <BotonImg source={require('../assets/audio.png')} width={48} onPress={() => playLocalSound(props.audio)} />
         </View>
     );
 }

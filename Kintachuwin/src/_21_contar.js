@@ -53,7 +53,7 @@ const Item = (props) => {
             </Text>
             {/*<Imgn source={props.foto} width={240} />*/}
             <Imgn source={props.tabla} width={350} />
-            <BotonImg source={require('../assets/audio.png')} onPress={() => playLocalSound(props.audio)} />
+            <BotonImg source={require('../assets/audio.png')} width={48} onPress={() => playLocalSound(props.audio)} />
         </View>
     );
 }

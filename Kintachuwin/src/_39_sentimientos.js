@@ -54,7 +54,7 @@ const Item = (props) => {
                     <Text style={Styles.cursiva}>{props.tut}</Text> - {props.esp}
                     {/*<Text style={{ fontStyle: 'normal', fontWeight: 'normal' }}>{props.esp} </Text>*/}
                 </Text>
-                <BotonImg source={require('../assets/audio.png')} onPress={() => playLocalSound(props.audio)} />
+                <BotonImg source={require('../assets/audio.png')} width={48} onPress={() => playLocalSound(props.audio)} />
             </View>
         </View>
     );

@@ -91,7 +91,7 @@ const BotonImg = (props) => {
             }}
             onPress={props.onPress}
         >
-            <Imgn source={props.source} width={48} />
+            <Imgn source={props.source} width={props.width} />
         </TouchableOpacity>
         </View>
     )
@@ -135,6 +135,9 @@ const Styles = StyleSheet.create({
     titulo: {// Título normal
         fontSize: 20, fontFamily: 'OpenSans-Bold', color: 'black', backgroundColor: '#FFFFFFd0'
     },
+    tituloCentrado: {// Título normal
+        fontSize: 20, fontFamily: 'OpenSans-Bold', color: 'black', backgroundColor: '#FFFFFFd0', textAlign: 'center'
+    },
     texto: {// Texto normal
         fontSize: 16, fontFamily: 'OpenSans-Regular', marginTop: 24, marginBottom: 24, backgroundColor: '#FFFFFFd0'
     },
@@ -146,6 +149,9 @@ const Styles = StyleSheet.create({
     },
     tutunaku: {// Texto en cursivas para bloques escritos solo en tutunakú
         fontSize: 16, fontFamily: 'OpenSans-Italic', marginTop: 24, marginBottom: 24
+    },
+    margen : {
+        marginBottom: 24//, height: 2, backgroundColor: 'blue'
     }
 });
 

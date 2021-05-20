@@ -20,7 +20,7 @@ const DATA = [
     { key: "45", flags: 2, tut: "Tusun", esp: "Chaca", cie: "Bursera simaruba", foto: require("../assets/_50/aa5.jpg"), audio: "au_5_f45.mp3" },
     { key: "46", flags: 4, tut: "Xunik", esp: "Jonote", cie: "Heliocarpus appendiculatus", foto: require("../assets/_50/aa6.jpg"), audio: "au_5_f46.mp3" },
     { key: "47", flags: 2, tut: "Okgowa", esp: "Hormiguillo", cie: "Cecropia obtusifolia", foto: require("../assets/_50/aa7.jpg"), audio: "au_5_f47.mp3" },
-    { key: "48", flags: 1, tut: "Lakgatila", esp: "Colorin", cie: "Erythrina americana", foto: require("../assets/_50/aa8.jpg"), audio: "au_5_f48.mp3" },
+    { key: "48", flags: 1, tut: "Lakgatila", esp: "Colorín", cie: "Erythrina americana", foto: require("../assets/_50/aa8.jpg"), audio: "au_5_f48.mp3" },
     { key: "49", flags: 2, tut: "Tokgxiwa", esp: "Sauco", cie: "Sambucus canadensis", foto: require("../assets/_50/aa9.jpg"), audio: "au_5_f49.mp3" },
     { key: "50", flags: 4, tut: "Kukat", esp: "Encino", cie: "Quercus spp", foto: require("../assets/_50/aa10.jpg"), audio: "au_5_f50.mp3" },
 ];
@@ -59,7 +59,7 @@ const Item = (props) => {
                 </View>
             </View>
 
-            <BotonImg source={require('../assets/audio.png')} onPress={() => playLocalSound(props.audio)} />
+            <BotonImg source={require('../assets/audio.png')} width={48} onPress={() => playLocalSound(props.audio)} />
         </View>
     );
 }
