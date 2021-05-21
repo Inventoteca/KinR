@@ -18,7 +18,7 @@ const DATA = [
     { key: "28", flags: 3, tut: "Lhpupuwina", esp: "Hierbabuena", cie: "Mentha spicata", foto: require("../assets/_50/h3.jpg"), audio: "au_5_f28.mp3" },
     { key: "29", flags: 1, tut: "Kixtak", esp: "Pata de gallo", cie: "Tinantia erecta", foto: require("../assets/_50/h4.jpg"), audio: "au_5_f29.mp3" },
     { key: "30", flags: 0, tut: "Chikichi", esp: "Papatla", cie: "Cana indica", foto: require("../assets/_50/h5.jpg"), audio: "au_5_f30.mp3" },
-    { key: "31", flags: 1, tut: "Kgalhtunit", esp: "Quintonile", cie: "Amaranthus cruentus", foto: require("../assets/_50/h6.jpg"), audio: "au_5_f31.mp3" },
+    { key: "31", flags: 1, tut: "Kgalhtunit", esp: "Quintonil", cie: "Amaranthus cruentus", foto: require("../assets/_50/h6.jpg"), audio: "au_5_f31.mp3" },
     { key: "32", flags: 2, tut: "Axkut", esp: "Tabaco", cie: "Nicotiana tabacum", foto: require("../assets/_50/h7.jpg"), audio: "au_5_f32.mp3" },
     { key: "33", flags: 1, tut: "Chankgat", esp: "Caña", cie: "Saccharum officinarum", foto: require("../assets/_50/h8.jpg"), audio: "au_5_f33.mp3" },
     { key: "34", flags: 2, tut: "Santucruxanat", esp: "Flor de mayo", cie: "Oncidium sphacelatum", foto: require("../assets/_50/h9.jpg"), audio: "au_5_f34.mp3" },

@@ -144,7 +144,7 @@ const App: () => React$Node = () => {
         <Stack.Screen name="Pronombres" component={Pronombres} options={{ title: "Pronombres posesivos" }} />
         <Stack.Screen name="Prefijos" component={Prefijos} options={{ title: "Prefijos posesivos" }} />
 
-        <Stack.Screen name="Contar" component={Contar} options={{ title: "Números - Contar" }} />
+        <Stack.Screen name="Contar" component={Contar} options={{ title: "Contar" }} />
 
         <Stack.Screen name="Colores" component={Colores} options={{ title: "Colores" }} />
         <Stack.Screen name="Cuerpo" component={Cuerpo} options={{ title: "Partes del cuerpo" }} />
@@ -163,7 +163,7 @@ const App: () => React$Node = () => {
         <Stack.Screen name="Otros" component={Otros} options={{ title: "Otros animales" }} />
         <Stack.Screen name="Reptiles" component={Reptiles} />
 
-        <Stack.Screen name="Frutos" component={Frutos} />
+        <Stack.Screen name="Frutos" component={Frutos} options={{ title: "Frutos, semillas o raíces" }} />
         <Stack.Screen name="Herbaceas" component={Herbaceas} options={{ title: "Herbáceas" }} />
         <Stack.Screen name="Arboles" component={Arboles} options={{ title: "Árboles" }} />
 

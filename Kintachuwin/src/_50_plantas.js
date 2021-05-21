@@ -38,7 +38,7 @@ function Plantas({ navigation }) {
                         Te recomendamos observar a detalle la siguiente iconografía:
                     </Text>
 
-                    <View style={{ padding: 12, backgroundColor: '#004AADf0', borderRadius: 8, margin: 24, marginTop: 0, elevation: 6 }}>
+                    <View style={{ padding: 12, backgroundColor: '#008037f0', borderRadius: 8, margin: 24, marginTop: 0, elevation: 6 }}>
                         <View style={{ flexDirection: 'row', alignItems: 'center', margin: 2 }}>
                             <Imgn source={require('../assets/_50/iali.png')} width={48} />
                             <Text style={Styles.simple}>Alimenticio</Text>

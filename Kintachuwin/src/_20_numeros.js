@@ -45,30 +45,31 @@ function Numeros({ navigation }) {
                         ¿Qué quieres aprender a contar?
                     </Text>
 
-                    <BotonImgTxt source={require('../assets/_21/ak_f.jpg')} title="Unidades de medición (Ak)" onPress={() => navigation.navigate('Contar')} />
-                    <BotonImgTxt source={require('../assets/_21/akg_f.jpg')} title="Elementos de forma esférica (Akg)" onPress={() => navigation.navigate('Contar')} />
-                    <BotonImgTxt source={require('../assets/_21/akga_f.jpg')} title="Plantas (Akga)" onPress={() => navigation.navigate('Contar')} />
-                    <BotonImgTxt source={require('../assets/_21/akgsti_f.jpg')} title="Rebanadas o gajos (Akgsti)" onPress={() => navigation.navigate('Contar')} />
-                    <BotonImgTxt source={require('../assets/_21/cha_f.jpg')} title="Chiles (Cha)" onPress={() => navigation.navigate('Contar')} />
-                    <BotonImgTxt source={require('../assets/_21/chaykgalha_f.jpg')} title="Personas (Cha y Kgalha)" onPress={() => navigation.navigate('Contar')} />
-                    <BotonImgTxt source={require('../assets/_21/kgalh_f.jpg')} title="Similares a carne o machetes (Kgalh)" onPress={() => navigation.navigate('Contar')} />
-                    <BotonImgTxt source={require('../assets/_21/kgampa_f.jpg')} title="Canciones (Kgampa)" onPress={() => navigation.navigate('Contar')} />
-                    <BotonImgTxt source={require('../assets/_21/kgan_f.jpg')} title="Elementos alargados (Kgan)" onPress={() => navigation.navigate('Contar')} />
-                    <BotonImgTxt source={require('../assets/_21/kge_f.jpg')} title="Cosas rollizas (Kge)" onPress={() => navigation.navigate('Contar')} />
-                    <BotonImgTxt source={require('../assets/_21/kilh_f.jpg')} title="Cosas con aberturas (Kilh)" onPress={() => navigation.navigate('Contar')} />
-                    <BotonImgTxt source={require('../assets/_21/laka_f.jpg')} title="Lugares (Laka)" onPress={() => navigation.navigate('Contar')} />
-                    <BotonImgTxt source={require('../assets/_21/lakga_f.jpg')} title="Elementos planos (Lakga)" onPress={() => navigation.navigate('Contar')} />
-                    <BotonImgTxt source={require('../assets/_21/mak_f.jpg')} title="Superficies o cosas delgadas (Mak)" onPress={() => navigation.navigate('Contar')} />
-                    <BotonImgTxt source={require('../assets/_21/mus_f.jpg')} title="Elementos que cuelgan (Mus)" onPress={() => navigation.navigate('Contar')} />
-                    <BotonImgTxt source={require('../assets/_21/pa_f.jpg')} title="Objetos que tienen panza (Pa)" onPress={() => navigation.navigate('Contar')} />
-                    <BotonImgTxt source={require('../assets/_21/pekg_f.jpg')} title="Hojas, billetes o recipientes vacíos (Pekg)" onPress={() => navigation.navigate('Contar')} />
-                    <BotonImgTxt source={require('../assets/_21/pix_f.jpg')} title="Manojos (Pix)" onPress={() => navigation.navigate('Contar')} />
-                    <BotonImgTxt source={require('../assets/_21/puak_f.jpg')} title="Montones (Pu’ak)" onPress={() => navigation.navigate('Contar')} />
-                    <BotonImgTxt source={require('../assets/_21/pukgalh_f.jpg')} title="Cultivos o macetas (Pukgalh)" onPress={() => navigation.navigate('Contar')} />
-                    <BotonImgTxt source={require('../assets/_21/pun_f.jpg')} title="Metates (Pun)" onPress={() => navigation.navigate('Contar')} />
-                    <BotonImgTxt source={require('../assets/_21/puu_f.jpg')} title="Pares, enteros o completos (Puu)" onPress={() => navigation.navigate('Contar')} />
-                    <BotonImgTxt source={require('../assets/_21/tan_f.jpg')} title="Animales (Tan)" onPress={() => navigation.navigate('Contar')} />
-                    <BotonImgTxt source={require('../assets/_21/tuu_f.jpg')} title="Jicarazos o cazos (Tuu)" onPress={() => navigation.navigate('Contar')} />
+                    {/* Todos los botones siguientes navegan a la misma página (Contar), pero cambian el valor de key */}
+                    <BotonImgTxt source={require('../assets/_21/ak_f.jpg')} title="Unidades de medición (Ak)" onPress={() => navigation.navigate('Contar', {key: 0})} />
+                    <BotonImgTxt source={require('../assets/_21/akg_f.jpg')} title="Elementos de forma esférica (Akg)" onPress={() => navigation.navigate('Contar', {key: 1})} />
+                    <BotonImgTxt source={require('../assets/_21/akga_f.jpg')} title="Plantas (Akga)" onPress={() => navigation.navigate('Contar', {key: 2})} />
+                    <BotonImgTxt source={require('../assets/_21/akgsti_f.jpg')} title="Rebanadas o gajos (Akgsti)" onPress={() => navigation.navigate('Contar', {key: 3})} />
+                    <BotonImgTxt source={require('../assets/_21/cha_f.jpg')} title="Chiles (Cha)" onPress={() => navigation.navigate('Contar', {key: 4})} />
+                    <BotonImgTxt source={require('../assets/_21/chaykgalha_f.jpg')} title="Personas (Cha y Kgalha)" onPress={() => navigation.navigate('Contar', {key: 5})} />
+                    <BotonImgTxt source={require('../assets/_21/kgalh_f.jpg')} title="Similares a carne o machetes (Kgalh)" onPress={() => navigation.navigate('Contar', {key: 6})} />
+                    <BotonImgTxt source={require('../assets/_21/kgampa_f.jpg')} title="Canciones (Kgampa)" onPress={() => navigation.navigate('Contar', {key: 7})} />
+                    <BotonImgTxt source={require('../assets/_21/kgan_f.jpg')} title="Elementos alargados (Kgan)" onPress={() => navigation.navigate('Contar', {key: 8})} />
+                    <BotonImgTxt source={require('../assets/_21/kge_f.jpg')} title="Cosas rollizas (Kge)" onPress={() => navigation.navigate('Contar', {key: 9})} />
+                    <BotonImgTxt source={require('../assets/_21/kilh_f.jpg')} title="Cosas con aberturas (Kilh)" onPress={() => navigation.navigate('Contar', {key: 10})} />
+                    <BotonImgTxt source={require('../assets/_21/laka_f.jpg')} title="Lugares (Laka)" onPress={() => navigation.navigate('Contar', {key: 11})} />
+                    <BotonImgTxt source={require('../assets/_21/lakga_f.jpg')} title="Elementos planos (Lakga)" onPress={() => navigation.navigate('Contar', {key: 12})} />
+                    <BotonImgTxt source={require('../assets/_21/mak_f.jpg')} title="Superficies o cosas delgadas (Mak)" onPress={() => navigation.navigate('Contar', {key: 13})} />
+                    <BotonImgTxt source={require('../assets/_21/mus_f.jpg')} title="Elementos que cuelgan (Mus)" onPress={() => navigation.navigate('Contar', {key: 14})} />
+                    <BotonImgTxt source={require('../assets/_21/pa_f.jpg')} title="Objetos que tienen panza (Pa)" onPress={() => navigation.navigate('Contar', {key: 15})} />
+                    <BotonImgTxt source={require('../assets/_21/pekg_f.jpg')} title="Hojas, billetes o recipientes vacíos (Pekg)" onPress={() => navigation.navigate('Contar', {key: 16})} />
+                    <BotonImgTxt source={require('../assets/_21/pix_f.jpg')} title="Manojos (Pix)" onPress={() => navigation.navigate('Contar', {key: 17})} />
+                    <BotonImgTxt source={require('../assets/_21/puak_f.jpg')} title="Montones (Pu’ak)" onPress={() => navigation.navigate('Contar', {key: 18})} />
+                    <BotonImgTxt source={require('../assets/_21/pukgalh_f.jpg')} title="Cultivos o macetas (Pukgalh)" onPress={() => navigation.navigate('Contar', {key: 19})} />
+                    <BotonImgTxt source={require('../assets/_21/pun_f.jpg')} title="Metates (Pun)" onPress={() => navigation.navigate('Contar', {key: 20})} />
+                    <BotonImgTxt source={require('../assets/_21/puu_f.jpg')} title="Pares, enteros o completos (Puu)" onPress={() => navigation.navigate('Contar', {key: 21})} />
+                    <BotonImgTxt source={require('../assets/_21/tan_f.jpg')} title="Animales (Tan)" onPress={() => navigation.navigate('Contar', {key: 22})} />
+                    <BotonImgTxt source={require('../assets/_21/tuu_f.jpg')} title="Jicarazos o cazos (Tuu)" onPress={() => navigation.navigate('Contar', {key: 23})} />
                 </ScrollView>
             </ImageBackground>
         </View>
