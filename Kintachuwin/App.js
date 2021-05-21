@@ -104,6 +104,7 @@ const _handleAppStateChange = (nextAppState) => {
 // verde '#008037'
 // azul '#004AAD'
 //<StatusBar barStyle="light-content" backgroundColor='black' />
+//options={{ headerShown: false }}
 const App: () => React$Node = () => {
 
   useEffect(() => {
@@ -136,7 +137,7 @@ const App: () => React$Node = () => {
         <Stack.Screen name="Animales" component={Animales} />
         <Stack.Screen name="Plantas" component={Plantas} />
         <Stack.Screen name="Audiovisuales" component={Audiovisuales} />
-        <Stack.Screen name="Cuentos" component={Cuentos} />
+        <Stack.Screen name="Cuentos" component={Cuentos} options={{ title: "Leyendas" }} />
         <Stack.Screen name="Galeria" component={Galeria} options={{ title: "Galería" }} />
         <Stack.Screen name="Conocenos" component={Conocenos} options={{ title: "Conócenos" }} />
 
@@ -167,13 +168,13 @@ const App: () => React$Node = () => {
         <Stack.Screen name="Herbaceas" component={Herbaceas} options={{ title: "Herbáceas" }} />
         <Stack.Screen name="Arboles" component={Arboles} options={{ title: "Árboles" }} />
 
-        <Stack.Screen name="Video" component={Video} options={{ headerShown: false }} />
+        <Stack.Screen name="Video" component={Video} />
 
-        <Stack.Screen name="Cuento1" component={Cuento1} />
-        <Stack.Screen name="Cuento2" component={Cuento2} />
-        <Stack.Screen name="Cuento3" component={Cuento3} />
-        <Stack.Screen name="Cuento4" component={Cuento4} />
-        <Stack.Screen name="Cuento5" component={Cuento5} />
+        <Stack.Screen name="Cuento1" component={Cuento1} options={{ title: "Leyenda 1" }} />
+        <Stack.Screen name="Cuento2" component={Cuento2} options={{ title: "Leyenda 2" }} />
+        <Stack.Screen name="Cuento3" component={Cuento3} options={{ title: "Leyenda 3" }} />
+        <Stack.Screen name="Cuento4" component={Cuento4} options={{ title: "Leyenda 4" }} />
+        <Stack.Screen name="Cuento5" component={Cuento5} options={{ title: "Leyenda 5" }}/>
 
         <Stack.Screen name="Xanay" component={Xanay} options={{ title: "Colectivo Xanay" }} />
         <Stack.Screen name="Colab" component={Colab} options={{ title: "Colaboradores" }} />

@@ -1,7 +1,7 @@
 /**
  * Video
  * 
- * En esta Screen se muestra el iframe que contiene video y
+ * En esta Screen se muestra un reproductor de video y
  * la descripción correspondiente.
  */
 

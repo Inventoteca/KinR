@@ -120,7 +120,7 @@ const BotonImgTxt = (props) => {
         >
             <Imgn source={props.source} width={64} />
 
-            <Text style={{ flex: 1, fontFamily: 'OpenSans-Regular', fontSize: 16, marginLeft: 32 }}>
+            <Text style={{ flex: 1, fontFamily: 'OpenSans-Regular', fontSize: 16, marginLeft: 28 }}>
                 {props.title}
             </Text>
         </TouchableOpacity>
@@ -129,7 +129,7 @@ const BotonImgTxt = (props) => {
 
 // Hoja de estilos
 const Styles = StyleSheet.create({
-    simple: {// Texto normal
+    simple: {// Texto sin fondo
         fontSize: 16, fontFamily: 'OpenSans-Regular', marginLeft: 8, color: 'white'
     },
     titulo: {// Título normal
@@ -148,7 +148,7 @@ const Styles = StyleSheet.create({
         fontSize: 16, fontFamily: 'OpenSans-Light', backgroundColor: '#FFFFFFd0'
     },
     tutunaku: {// Texto en cursivas para bloques escritos solo en tutunakú
-        fontSize: 16, fontFamily: 'OpenSans-Italic', marginTop: 24, marginBottom: 24
+        fontSize: 16, fontFamily: 'OpenSans-Italic', marginTop: 24, marginBottom: 24, backgroundColor: '#FFFFFFd0'
     },
     margen : {
         marginBottom: 24//, height: 2, backgroundColor: 'blue'
