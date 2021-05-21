@@ -16,6 +16,9 @@ import {//importar varios elementos
 // importar componentes personalizados
 import { playLocalSound, Imgn, Boton, BotonImg, Styles } from './mis-componentes';
 
+// Todos los datos que se pueden mostrar en la pantalla están en este array.
+// Antes se usaba FlatList para mostrar todos.
+// Ahora se muestra solo un objeto indicado con el valor de key que se recibe desde la pantalla anterior
 const DATA = [
     { key: "0", titulo: "Ak", texto: "Se utiliza para contar trozos o unidades de medición, como el metro", foto: require("../assets/_21/ak_f.jpg"), tabla: require("../assets/_21/ak_t.png"), audio: "au_2_ak.mp3" },
     { key: "1", titulo: "Akg", texto: "Se utiliza para contar elementos de forma esférica. También, es el prefijo de uso genérico que sirve para contar elementos de difícil clasificación", foto: require("../assets/_21/akg_f.jpg"), tabla: require("../assets/_21/akg_t.png"), audio: "au_2_akg.mp3" },
@@ -43,6 +46,8 @@ const DATA = [
     { key: "23", titulo: "Tuu", texto: "Se utiliza para contar jicarazos, platos con comida o cazos de agua", foto: require("../assets/_21/tuu_f.jpg"), tabla: require("../assets/_21/tuu_t.png"), audio: "au_2_tuu.mp3" },
 ];
 
+// Este item se usaba con FlatList
+// Ahora se usa dentro de una ScrollView
 const Item = (props) => {
     return (
         <View style={{ marginBottom: 16 }}>
@@ -59,8 +64,9 @@ const Item = (props) => {
     );
 }
 
+// Se recibe un parámetro de la pantalla anterior (Numeros)
 function Contar({ route, navigation }) {
-    var key = route.params.key; //extraer valor pasado desde la pantalla anterior
+    var key = route.params.key; //extraer valor del parámetro
     return (
         <View style={{ flex: 1 }}>
             <ImageBackground source={require('../assets/fondo.png')} style={{ flex: 1, resizeMode: 'cover' }}>
