@@ -1,66 +1,61 @@
-// En esta Screen solo muestra el iframe que contiene video
-import React from 'react'; //estrictamente necesario
-import {
+/**
+ * Video
+ * 
+ * En esta Screen se muestra el iframe que contiene video y
+ * la descripción correspondiente.
+ */
+
+import React from 'react'; //librería principal
+import {//importar varios elementos
     View,
-    Text,
-    //Button,
-    Image,
-    //TouchableHighlight,
-    //TouchableNativeFeedback,
-    TouchableOpacity,
-    ScrollView,
     SafeAreaView,
+    Text,
+    ScrollView,
+    ImageBackground
 } from 'react-native'; //varios elementos
-import YoutubePlayer from 'react-native-youtube-iframe';
+// importar componentes personalizados
+import { Imgn, BotonImg, Styles } from './mis-componentes';
 import { WebView } from 'react-native-webview';
 
-const Imgn = (props) => {
-    const i = Image.resolveAssetSource(props.source);
-    const r = i.height / i.width; //ratio
-    const w = props.width; //base width
-    const h = w * r; //adjusted height
-    return (
-        <View style={{ alignItems: 'flex-start' }} >
-            <Image source={props.source} style={{ width: w, height: h }} />
-        </View>
-    );
-}
-
-const Boton = (props) => {
-    return (
-        <TouchableOpacity
-            style={{
-                borderColor: 'gray',
-                borderWidth: 1,
-                borderRadius: 4,
-                padding: 6,
-                backgroundColor: 'whitesmoke',
-                margin: 4,
-                alignItems: 'center'
-            }}
-            onPress={props.onPress}
-        >
-            <Text style={{ fontFamily: 'OpenSans-Regular', fontSize: 16 }}>
-                {props.title}
-            </Text>
-        </TouchableOpacity>
-    )
-}
-//<Boton title="X" onPress={() => navigation.navigate('Gramatica')} />
-
-//<YoutubePlayer height={360} videoId={"sNhhvQGsMEc"} />
 function Video({ navigation }) {
     return (
-        <SafeAreaView style={{ flex: 1, justifyContent: 'center', backgroundColor: 'black' }}>
-            <WebView
-                style={{backgroundColor:'black'}}
-                allowsFullscreenVideo
-                //allowsInlineMediaPlayback
-                //mediaPlaybackRequiresUserAction
-                //source={{ uri: 'https://www.youtube.com/embed/sNhhvQGsMEc' }}
-                source={{ uri: "https://www.bitchute.com/embed/ABRNW7Tzwpi8/" }}
-                
-            />
+        <SafeAreaView style={{ flex: 1 }}>
+            <ImageBackground source={require('../assets/fondo.png')} style={{ flex: 1, resizeMode: 'cover' }}>
+                <ScrollView contentContainerStyle={{ padding: 24 }}>
+                    <Text style={Styles.titulo}>
+                        <Text style={Styles.cursiva}>KINTACHIWINKAN</Text>
+                    </Text>
+                    <Text style={Styles.texto}>
+                        En Tuxtla, comunidad de la Sierra Norte de Puebla, el
+                        <Text style={Styles.cursiva}>tutunakú</Text> es
+                        un idioma vivo, la voz de niños, jóvenes y adultos, un idioma que
+                        retiembla en los altavoces del pueblo cada día; es la voz de los padres,
+                        del recuerdo y del presente. Mientras que para las personas de la
+                        tercera edad, aprender español fue una cuestión de supervivencia, para
+                        las nuevas generaciones, preservar el <Text style={Styles.cursiva}>tutunakú</Text>
+                        es resistir a un mundo cambiante.
+                        {"\n\n"}
+                        Dirección y guión: Jorge Ramos Luna y Juan M. Díaz García {"\n"}
+                        Producción: Colectivo Xanay {"\n"}
+                        Fotografía y edición: Jorge Ramos Luna {"\n"}
+                        Sonido directo: Uzu Morales {"\n"}
+                        Asistencia de producción: Citlal Solano {"\n"}
+                        Año: 2021
+                    </Text>
+
+                    <WebView
+                        style={{ height: 340 }}
+                        allowsFullscreenVideo={true}
+                        //allowFileAccess={false}
+                        //mixedContentMode="always"
+                        mediaPlaybackRequiresUserAction={true}
+                        injectedJavaScript={`document.getElementsByTagName("video")[0].controlsList="nodownload";`}
+                        source={{ uri: "https://seed171.bitchute.com/ZWQoYTjy8gkQ/8Lmpt1e3ZmM3.mp4" }}
+                        //startInLoadingState={true}
+                    />
+                    
+                </ScrollView>
+            </ImageBackground>
         </SafeAreaView>
     );
 }
@@ -68,6 +63,24 @@ function Video({ navigation }) {
 export default Video;
 
 /*
+<WebView
+                        mediaPlaybackRequiresUserAction
+                        allowsFullscreenVideo
+                        allowsInlineMediaPlayback={false}
+                        controlsList="nodownload"
+                        style={{ flex: 0, height: 340 }}
+                        //source={{ html: '<iframe allowfullscreen width="640" height="360" scrolling="no" frameborder="0" style="border: none;" src="https://www.bitchute.com/embed/ABRNW7Tzwpi8/"></iframe>' }}
+                        //source={{ uri: 'https://www.youtube.com/embed/sNhhvQGsMEc' }}
+                        //source={{ html: '<div style="padding: 56.25% 0px 0px; position: relative;"><iframe src="https://www.bitchute.com/embed/UGlrF9o9b-Q/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen scrolling="auto"  style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"><small>BitChute embedding powered by <a href="https://embed.tube">embed.tube</a></small></iframe></div>'}}
+                        //source={{ uri: "https://www.bitchute.com/embed/ABRNW7Tzwpi8/" }}
+                        //source={{ uri: "https://seed167.bitchute.com/rDJENSMUIXt9/ABRNW7Tzwpi8.mp4" }}
+                        //source={{ html: '<iframe allowfullscreen scrolling="no" frameborder="0" style="border: none; width: 100%; height: 100%;" src="https://seed167.bitchute.com/rDJENSMUIXt9/ABRNW7Tzwpi8.mp4"></iframe>' }}
+                        //source={{ uri: "https://seed171.bitchute.com/ZWQoYTjy8gkQ/8Lmpt1e3ZmM3.mp4" }}
+                        source={{ html: '<div><video controls controlsList="nodownload"><source src="https://seed163.bitchute.com/KQdZKMWQvsr6/jRcCh0rnCsLY.mp4" type="video/mp4"></video></div>' }}
+                    />
+
+//<YoutubePlayer height={360} videoId={"sNhhvQGsMEc"} />
+
 <ScrollView>
     <View style={{
         flex: 1,
