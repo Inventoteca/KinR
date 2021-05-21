@@ -99,7 +99,7 @@ react-native-audio-toolkit parece buena opción, pero la instalación es complic
 https://github.com/react-native-audio-toolkit/react-native-audio-toolkit  
 https://github.com/react-native-video/react-native-video  
 
-Esta será la extensión elegida.  
+Esta es la extensión elegida.  
 https://developer.aliyun.com/mirror/npm/package/react-native-sound-player  
 Genera una instancia global del reproductor, por lo que solo se 
 reproduce un sonido a la vez, así evitamos crear un componente propio.  
@@ -201,8 +201,18 @@ https://www.reddit.com/r/reactnative/comments/bfuwcx/react_native_vimeo_android/
 https://stackoverflow.com/questions/53220524/how-to-play-vimeo-videos-in-react-native  
 
 Usando `webview` es muy fácil insertar videos de diferentes fuentes.  
+https://github.com/react-native-webview/react-native-webview  
 
 Los videos se pueden subir a BitChute o a Internet Archive.  
+
+Se eligió BitChute y webview. En cada video se puede obtener un link para insertar,
+pero los controles se ven muy pequeños en la app.  
+Solución: Obtener el link directo del video (mp4), viendo el código fuente de la página.
+Los controles se ven vien, pero es necesario desactivar la opción de descargar  
+https://stackoverflow.com/questions/60144154/disable-download-in-react-native-webview  
+Otras refs  
+https://www.allowfullscreen.com/questions/25/allowfullscreen-has-no-effect  
+https://embed.tube/embed-code-generator/bitchute/  
 
 ## Navegar entre páginas
 El método más común para navegar entre páginas (o pantallas) es React Navigation.
