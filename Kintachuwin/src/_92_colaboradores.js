@@ -42,10 +42,10 @@ function Colab({ navigation }) {
                         texto='Estudiate del bachillerato. Mi lengua materna es el Totonaco, me encanta la poesía, las matemáticas, jugar ajedrez, bailar, escuchar música, tocar con la banda de guerra en la escuela. He ganado en concursos de declamación,  ajedrez y juego de "Tsum".'
                     />
                     <Item
-                        foto={require('../assets/_92/alp.jpg')}
+                        foto={require('../assets/_92/dfc.jpg')}
                         nombre="David Figueroa Castañeda"
-                        correo="correo"
-                        texto="texto"
+                        correo="david.fc@inventoteca.com"
+                        texto="Ing. en Mecatrónica. Asesorías en: Innovación Tecnológica, Desig Thinking, Emprendimiento, Programación Embebida (Node-RED), Linux"
                     />
                     <Item
                         foto={require('../assets/_92/doxl.jpg')}
@@ -72,10 +72,10 @@ function Colab({ navigation }) {
                         texto="Antropólogo lingüista. Doctor en Investigación Educativa. Me gustan las lenguas mesoamericanas, sobre todo la totonaca- tepehua, y el senderismo."
                     />
                     <Item
-                        foto={require('../assets/_92/jfs.jpg')}
+                        foto={require('../assets/_92/rah.jpg')}
                         nombre="Rafael Alarcón Hernández"
-                        correo="correo"
-                        texto="texto"
+                        correo="rafael.alarcon@inventoteca.com"
+                        texto="Ing. en Mecatrónica. Asesorías en: Programación en C++, Programación en Python, Algoritmos de búsqueda de ruta, Diseño CAD, Diseño de PCB"
                     />
 
                 </ScrollView>
