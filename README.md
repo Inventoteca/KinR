@@ -367,3 +367,10 @@ import { ImageBackground } from "react-native";
 ```
 Conditional rendering. Agregar componentes en base a condiciones.  
 https://reactjs.org/docs/conditional-rendering.html  
+
+`flexWrap` no se recomienda en `FlatList`, pero es posible usarlo si `flexDirection:'row'`  
+Si la pantalla de Galería baja los frames, usar esta forma  
+https://stackoverflow.com/questions/45526443/react-native-how-to-wrap-flatlist-items  
+
+Ejemplo de `getItemLayout` en `FlatList`  
+https://stackoverflow.com/questions/56416228/getitemlayout-in-react-native-flatlist  
