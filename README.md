@@ -365,3 +365,5 @@ import { ImageBackground } from "react-native";
   </ImageBackground>
 </View>
 ```
+Conditional rendering. Agregar componentes en base a condiciones.  
+https://reactjs.org/docs/conditional-rendering.html  
