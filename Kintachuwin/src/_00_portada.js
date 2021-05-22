@@ -5,54 +5,15 @@
  * el logo de Xanay y un botón para pasar a la siguiente pantalla.
  */
 
-import React, { Component, useEffect } from 'react'; //estrictamente necesario
-import {
-    View,
-    Text,
-    Image,
-    //Button,
-    TouchableOpacity,
-    TouchableHighlight,
-    AppState,
-    ImageBackground,
-} from 'react-native'; //varios elementos
-
-const Imgn = (props) => {
-    const i = Image.resolveAssetSource(props.source);
-    const r = i.height / i.width; //ratio
-    const w = props.width; //base width
-    const h = w * r; //adjusted height
-    return (
-        <View>
-            <Image source={props.source} style={{ width: w, height: h }} />
-        </View>
-    );
-}
-
-const Boton = (props) => {
-    return (
-        <TouchableHighlight
-            style={{
-                borderColor: 'gray',
-                borderWidth: 1,
-                borderRadius: 4,
-                padding: 6,
-                backgroundColor: 'whitesmoke',
-                margin: 4,
-                alignItems: 'center',
-                width: 150,
-                marginBottom: 48,
-            }}
-            onPress={props.onPress}
-            underlayColor="white"
-            activeOpacity={0.2}
-        >
-            <Text style={{ fontFamily: 'OpenSans-Regular', fontSize: 16 }}>
-                {props.title}
-            </Text>
-        </TouchableHighlight>
-    )
-}
+ import React from 'react'; //librería principal
+ import {//importar varios elementos
+     View,
+     Text,
+     AppState,
+     ScrollView,
+     ImageBackground
+ } from 'react-native'; //varios elementos
+ import { Imgn, Boton, Styles } from './mis-componentes'; //importar componentes personalizados
 
 const _handleAppStateChange = (nextAppState) => {
     console.log(AppState.currentState);
@@ -77,8 +38,10 @@ function Portada({ navigation }) {
     return (
         <View style={{ flex: 1, backgroundColor: 'yellow'}}>
             <ImageBackground source={require('../assets/fondo.png')} style={{ flex: 1, resizeMode: 'cover', justifyContent: 'center', alignItems: 'center'}}>
-                <Imgn source={require('../assets/logo.png')} width={320} />
+                <Imgn source={require('../assets/logo.png')} width={340} />
+                <View style={Styles.margen}></View>
                 <Imgn source={require('../assets/xanay.png')} width={200} />
+                <View style={Styles.margen}></View>
                 <Boton title="Entrar" onPress={() => navigation.navigate('Principal')} />
             </ImageBackground>
         </View>
