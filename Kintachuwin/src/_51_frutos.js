@@ -104,6 +104,7 @@ function Frutos({ navigation }) {
                     // sin embargo aparece en la documentación de ScrollView.
                     //style={{ flex: 1, padding: 0, paddingBottom: 0, margin: 24 }}
                     //ListHeaderComponent={Header}
+                    //initialScrollIndex={10} //solo funciona bien con getItemLayout
                     contentContainerStyle={{ padding: 24 }}
                     data={DATA}
                     renderItem={({ item }) => <Item

@@ -51,19 +51,19 @@ const Imgn = (props) => {
 // un Touchable que contiene un Texto.
 const Boton = (props) => {
     return (
-        <TouchableOpacity 
+        <TouchableOpacity
             style={{
-                borderColor:'gray', 
-                borderWidth:1, 
-                borderRadius:4, 
-                padding:6, 
-                backgroundColor:'whitesmoke', 
-                margin:4,
-                alignItems:'center'
+                borderColor: 'gray',
+                borderWidth: 1,
+                borderRadius: 4,
+                padding: 6,
+                backgroundColor: 'whitesmoke',
+                margin: 4,
+                alignItems: 'center'
             }}
             onPress={props.onPress}
         >
-            <Text style={{fontFamily:'OpenSans-Regular', fontSize:16}}>
+            <Text style={{ fontFamily: 'OpenSans-Regular', fontSize: 16 }}>
                 {props.title}
             </Text>
         </TouchableOpacity>
@@ -75,24 +75,49 @@ const Boton = (props) => {
 const BotonImg = (props) => {
     return (
         <View style={{ alignItems: 'center' }}>
-        <TouchableOpacity
-            style={{
-                borderColor: 'gray',
-                borderWidth: 0,
-                borderRadius: 4,
-                padding: 4,
-                backgroundColor: 'whitesmoke',
-                margin: 6,
-                alignItems: 'center',
-                //flexDirection: 'row', //horizontal
-                shadowColor: 'black',
-                shadowRadius: 6, //solo iOS
-                elevation: 6,
-            }}
-            onPress={props.onPress}
-        >
-            <Imgn source={props.source} width={props.width} />
-        </TouchableOpacity>
+            <TouchableOpacity
+                style={{
+                    borderColor: 'gray',
+                    borderWidth: 0,
+                    borderRadius: 4,
+                    padding: 4,
+                    backgroundColor: 'whitesmoke',
+                    margin: 6,
+                    alignItems: 'center',
+                    //flexDirection: 'row', //horizontal
+                    shadowColor: 'black',
+                    shadowRadius: 6, //solo iOS
+                    elevation: 6,
+                }}
+                onPress={props.onPress}
+            >
+                <Imgn source={props.source} width={props.width} />
+            </TouchableOpacity>
+        </View>
+    )
+}
+
+// Botón personalizado con imagen 2 (sin padding)
+// Está formado por un touchable que contiene una imagen
+const BotonImg2 = (props) => {
+    return (
+        <View style={{ alignItems: 'center', margin: 6 }}>
+            <TouchableOpacity
+                style={{
+                    //borderColor: 'gray',
+                    //borderWidth: 0,
+                    borderRadius: 0,
+                    //backgroundColor: 'whitesmoke',
+                    //margin: 6,
+                    //alignItems: 'center',
+                    //shadowColor: 'black',
+                    //shadowRadius: 6, //solo iOS
+                    //elevation: 6,
+                }}
+                onPress={props.onPress}
+            >
+                <Imgn source={props.source} width={96} />
+            </TouchableOpacity>
         </View>
     )
 }
@@ -150,14 +175,14 @@ const Styles = StyleSheet.create({
     tutunaku: {// Texto en cursivas para bloques escritos solo en tutunakú
         fontSize: 16, fontFamily: 'OpenSans-Italic', marginTop: 24, marginBottom: 24, backgroundColor: '#FFFFFFd0'
     },
-    margen : {
+    margen: {
         marginBottom: 24//, height: 2, backgroundColor: 'blue'
     }
 });
 
 // Para exportar todo usar corchetes y separar con comas
 //export default playLocalSound;
-export {playLocalSound, stopSound, Imgn, Boton, BotonImg, BotonImgTxt, Styles};
+export { playLocalSound, stopSound, Imgn, Boton, BotonImg, BotonImg2, BotonImgTxt, Styles };
 
 // Código para copiar reutilizar
 
@@ -223,7 +248,7 @@ const DATA = [
 ];
 */
 /*<FlatList data={DATA} renderItem={
-    ({item}) => <Item titulo={item.titulo} texto={item.texto} imagen={item.imagen} audio={item.audio} /> 
+    ({item}) => <Item titulo={item.titulo} texto={item.texto} imagen={item.imagen} audio={item.audio} />
 }/>*/
 
 /*
