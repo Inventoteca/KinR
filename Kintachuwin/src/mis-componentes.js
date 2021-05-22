@@ -54,12 +54,15 @@ const Boton = (props) => {
         <TouchableOpacity
             style={{
                 borderColor: 'gray',
-                borderWidth: 1,
+                borderWidth: 0,
                 borderRadius: 4,
-                padding: 6,
+                padding: 20,
                 backgroundColor: 'whitesmoke',
-                margin: 4,
-                alignItems: 'center'
+                margin: 6,
+                alignItems: 'center',
+                shadowColor: 'black',
+                shadowRadius: 6, //solo iOS
+                elevation: 6,
             }}
             onPress={props.onPress}
         >
