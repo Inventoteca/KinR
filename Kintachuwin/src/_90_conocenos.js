@@ -31,7 +31,7 @@ function Conocenos({ navigation }) {
                     </Text>
 
 
-                    <Boton title="Colectivo Xanay" onPress={() => navigation.navigate('Xanay')} />
+                    <Boton title="Integrantes" onPress={() => navigation.navigate('Xanay')} />
                     <Boton title="Colaboradores" onPress={() => navigation.navigate('Colab')} />
 
                 </ScrollView>
