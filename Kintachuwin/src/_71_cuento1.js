@@ -13,23 +13,32 @@ import {//importar varios elementos
 import { playLocalSound, Imgn, Boton, BotonImg, Styles } from './mis-componentes';
 
 // Es muy probable que se cambie la estructura
+/*
+<View style={{ flex: 1, flexDirection: 'row' }}>
+    <Imgn source={require('../assets/_70/cn1.jpg')} width={160} />
+    <View style={{ flex: 1, paddingLeft: 12 }}>
+        <Text style={Styles.titulo}>
+            <Text style={Styles.cursiva}>CHICHINI’ CHU MPAPA’</Text>
+        </Text>
+        <Text style={Styles.autor}>
+            Por Arely López y Verónica Flores
+        </Text>
+    </View>
+</View>
+*/
 function Cuento1({ navigation }) {
     return (
         <View style={{ flex: 1 }}>
             <ImageBackground source={require('../assets/fondo.png')} style={{ flex: 1, resizeMode: 'cover' }}>
                 <ScrollView contentContainerStyle={{ padding: 24 }}>
 
-                    <View style={{ flex: 1, flexDirection: 'row' }}>
-                        <Imgn source={require('../assets/_70/cn1.jpg')} width={160} />
-                        <View style={{ flex: 1, paddingLeft: 12 }}>
-                            <Text style={Styles.titulo}>
-                                <Text style={Styles.cursiva}>CHICHINI’ CHU MPAPA’</Text>
-                            </Text>
-                            <Text style={Styles.autor}>
-                                Por Arely López y Verónica Flores
-                            </Text>
-                        </View>
-                    </View>
+                    <Imgn source={require('../assets/_70/cn1.jpg')} width={320} />
+                    <Text style={Styles.titulo}>
+                        <Text style={Styles.cursiva}>CHICHINI’ CHU MPAPA’</Text>
+                    </Text>
+                    <Text style={Styles.autor}>
+                        Por Arely López y Verónica Flores
+                    </Text>
 
                     <Text style={Styles.tutunaku}>
                         {`Wa lu makgasa´ akxni´ la ninatu xanan´chichini´chu mpapa, tantum sluluk luwa xlakgati xan  tsitsiwan kakgtum chiwix anta xtatakgs kxa tachanan axcut. Wa´yuma xmalana tachanan makgtakgslh  mpi wa´yuma´sluluk xlakgalhima ntachanan, mapanuputulh man chiwix akxni´xamalh makgkatsilh pi tsits, nilah mapanulh kumu luwa tsing matasaninankgolh amakgapitsinin lakchixcuwin nima ntlakg lakgtliwakgan kampichi xmakgtayakgolh cha nilalh matsiwikgolh, mihl tantum spun litalakgapas “Tantsulut” kgawas xtapalanit, tiyalh man chiwix ni tuwa´ tsukulh makgolog  “skulu chiwix, skulu chiw” kilhwantilha alh lilakgapulh tani xtatakgs rey.
