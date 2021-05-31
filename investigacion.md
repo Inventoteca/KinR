@@ -6,7 +6,7 @@ También hay notas de otras herramientas utilizadas.
 La app está programada con React Native. Existe un repositorio anterior donde la app se comenzó a programar con Unity.
 El nombre del repo es KintachuwinUnity. Se hizo privado, no contiene mucha info útil en este momento.  
 
-## Preparación del entorno
+## Preparar el entorno
 Se requiere Node v12 o mayor. Para poder usar diferentes versiones en otros proyectos,
 es recomendable instalar nvm. Antes es necesario desinstalar (por completo) node.  
 https://www.nubo.eu/Install-Multiple-Node-Versions-On-Windows/  
@@ -108,6 +108,7 @@ Otra opción más complicada sería escuchar eventos en cada página o pantalla
 https://reactnavigation.org/docs/navigation-events/  
 
 ## Repasar margin y padding
+Margen es el espacio alrededor del elemento. Padding es el espacio del borde del elemento a los elementos internos.  
 https://blog.hubspot.com/website/css-margin-vs-padding  
 https://www.w3schools.com/css/css_boxmodel.asp  
 
@@ -238,10 +239,6 @@ import NombreDePagina from './_archivo';
 ```
 
 ## Crear APK
-La documentación tiene instrucciones para generar un Android App Bundle y 
-publicar en Google Play, sin embargo el archivo que se obtiene es un .aab  
-https://reactnative.dev/docs/signed-apk-android  
-
 Con estas instrucciones se puede generar un .apk  
 https://dev.to/nitish173/how-to-generate-a-debug-apk-in-react-native-1gdg  
 ```
@@ -255,6 +252,20 @@ Al terminar, el archivo se encuentra en `yourProject/android/app/build/outputs/a
 
 Aquí hay instrucciones parecidas a las de la documentación con explicaciones más extensas  
 https://www.instamobile.io/android-development/generate-react-native-release-build-android/  
+
+La documentación tiene instrucciones para generar un Android App Bundle y 
+publicar en Google Play, el archivo que se obtiene es un .aab  
+https://reactnative.dev/docs/signed-apk-android  
+
+En la compilación del .abb aparecieron errores relacionados con archivos duplicados. 
+Para solucionarlo se borraron archivos de `/android/app/src/main/res/`  
+
+- Carpetas con nombre drawable
+- `app.json` dentro de la carpeta `raw`
+
+Parece que no es el mejor método, pero funciona.  
+Aquí aparece otro método (no se ha probado)  
+https://stackoverflow.com/questions/53239705/react-native-error-duplicate-resources-android  
 
 ## Cambiar icono de app Android
 Cambiar las imagenes de las carpetas mipmap* que se encuentran en 
