@@ -19,6 +19,7 @@ Preparar entorno siguiendo la documentación de React Native
 - Android Studio - Seguir las instrucciones de los paquetes que se deben instalar dentro de Android Studio
 - JDK (8)
 - Node v12
+ 
 https://reactnative.dev/docs/getting-started  
 https://reactnative.dev/docs/environment-setup  
 
